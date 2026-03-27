@@ -11,6 +11,12 @@ $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 $errors = $Findings | Where-Object { $_ -like 'ERROR:*' }
 $warnings = $Findings | Where-Object { $_ -like 'WARN:*' }
 
+if ($null -eq $errors) { $errors = @() }
+if ($null -eq $warnings) { $warnings = @() }
+
+$errorsText = if ($errors.Count -gt 0) { [string]::Join("`n", $errors) } else { "None" }
+$warningsText = if ($warnings.Count -gt 0) { [string]::Join("`n", $warnings) } else { "None" }
+
 @"
 # GAF Validation Report
 
@@ -19,8 +25,8 @@ $warnings = $Findings | Where-Object { $_ -like 'WARN:*' }
 - Warnings: $($warnings.Count)
 
 ## Errors
-$([string]::Join("`n", $errors))
+$errorsText
 
 ## Warnings
-$([string]::Join("`n", $warnings))
+$warningsText
 "@ | Set-Content -Encoding UTF8 $ReportPath
