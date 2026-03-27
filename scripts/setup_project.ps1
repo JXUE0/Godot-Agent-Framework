@@ -20,10 +20,12 @@ if (-not (Test-Path $projectFile)) {
 Write-Host "[GAF][Setup] Proyecto detectado: $ProjectRoot"
 
 if ($InstallMCP) {
-  $args = @("-ProjectRoot", $ProjectRoot)
-  if ($ForceMCP) { $args += "-Force" }
   Write-Host "[GAF][Setup] Instalando MCP..."
-  & (Join-Path $frameworkRoot 'scripts\install_mcp.ps1') @args
+  if ($ForceMCP) {
+    & (Join-Path $frameworkRoot 'scripts\install_mcp.ps1') -ProjectRoot $ProjectRoot -Force
+  } else {
+    & (Join-Path $frameworkRoot 'scripts\install_mcp.ps1') -ProjectRoot $ProjectRoot
+  }
 }
 
 if ($RunValidation) {
