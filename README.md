@@ -76,3 +76,4 @@ my_godot_game/
 ## License
 MIT
 
+\n\n## References\n- Godot Engine: https://godotengine.org/\n- Godot Docs: https://docs.godotengine.org/en/stable/\n- Godot GitHub: https://github.com/godotengine/godot\n
