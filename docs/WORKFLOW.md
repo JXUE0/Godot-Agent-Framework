@@ -17,3 +17,4 @@
 - [ ] Documentación actualizada
 - [ ] QA informado
 \n\n## Handoffs\n- QA: docs/handoffs/qa_report.md\n- Lead Engineer: docs/handoffs/lead_review.md\n- Producer: docs/handoffs/producer_update.md\n
+\n\n## Orquestacion multi-agente\n- Percepcion: leer estado actual del proyecto.\n- Razonamiento: plan de cambios.\n- Accion: ejecutar modificaciones.\n- Interaccion: coordinar con otros agentes.\n
