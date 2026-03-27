@@ -10,14 +10,14 @@ $allowedTempDirs = @('temp', 'tmp', '_temp', '.temp', (Join-Path $FrameworkRoot 
 
 function Test-ExcludedPath([string]$fullPath) {
   foreach ($d in $excludedDirs) {
-    if ($fullPath -like "*\\$d\\*") { return $true }
+    if ($fullPath -like "*\$d\*") { return $true }
   }
   return $false
 }
 
 function Test-InAllowedTempDir([string]$fullPath) {
   foreach ($d in $allowedTempDirs) {
-    if ($fullPath -like "*$d\\*") { return $true }
+    if ($fullPath -like "*\$d\*") { return $true }
   }
   return $false
 }
