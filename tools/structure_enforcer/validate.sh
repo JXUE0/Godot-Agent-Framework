@@ -6,6 +6,7 @@ FRAMEWORK_ROOT="$2"
 PROJECT_FILE="$PROJECT_ROOT/project.godot"
 FRAMEWORK_DIR="$PROJECT_ROOT/godot-agent-framework"
 TEMPLATES_DIR="$FRAMEWORK_ROOT/tools/scene_templates"
+EXPECTED_DIRS=("scenes" "scripts" "assets" "addons")
 
 if [[ ! -f "$PROJECT_FILE" ]]; then
   echo "ERROR: No se encontro project.godot en $PROJECT_ROOT"
@@ -14,6 +15,12 @@ fi
 if [[ ! -d "$FRAMEWORK_DIR" ]]; then
   echo "ERROR: No se encontro godot-agent-framework/ en $PROJECT_ROOT"
 fi
+
+for d in "${EXPECTED_DIRS[@]}"; do
+  if [[ ! -d "$PROJECT_ROOT/$d" ]]; then
+    echo "WARN: Carpeta recomendada no encontrada: $PROJECT_ROOT/$d"
+  fi
+done
 
 while IFS= read -r -d '' file; do
   if [[ "$file" != "$TEMPLATES_DIR"* ]]; then
