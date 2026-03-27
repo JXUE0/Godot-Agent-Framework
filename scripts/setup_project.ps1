@@ -14,7 +14,6 @@ if (-not (Test-Path (Join-Path $ProjectRoot 'project.godot'))) {
 if ($InstallMCP) {
   Write-Host "[GAF][Setup] Instalando MCP..."
   $mcpArgs = @("-ProjectRoot", $ProjectRoot)
-  if ($ForceMCP) { $mcpArgs += "-Force" }
   & (Join-Path $PSScriptRoot 'install_mcp.ps1') @mcpArgs
 }
 

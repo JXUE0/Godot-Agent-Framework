@@ -10,7 +10,6 @@ if (Test-Path $addonDir) {
   Write-Host "[GAF] MCP ya instalado en $addonDir"
 } else {
   $args = @("-ProjectRoot", $ProjectRoot)
-  if ($ForceMCP) { $args += "-Force" }
   & (Join-Path $frameworkRoot 'scripts\install_mcp.ps1') @args
 }
 

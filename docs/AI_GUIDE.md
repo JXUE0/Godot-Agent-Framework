@@ -23,7 +23,7 @@ If the user says "Run GAF" or "Execute GAF", always run the entrypoint:
 - macOS/Linux: `./scripts/gaf.sh /ruta/tu_proyecto`
 
 This command automatically:
-1. Installs `addons/godot_mcp` if missing.
+1. Installs `addons/godot_mcp` if missing (no backups are created).
 2. Runs full validation.
 3. Writes report to `docs/generated/validation-report.md`.
 

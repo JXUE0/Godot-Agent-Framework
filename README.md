@@ -17,7 +17,7 @@
 ## Quickstart
 1. Clone this repo inside your Godot project:
    `my_godot_game/godot-agent-framework/`
-2. Run GAF (auto-installs MCP if missing + runs validation):
+2. Run GAF (auto-installs MCP if missing + runs validation, no backups created):
    Windows: `.scripts\gaf.cmd C:\ruta\tu_proyecto`
    macOS/Linux: `./scripts/gaf.sh /ruta/tu_proyecto`
 3. Read `docs/AI_GUIDE.md` and follow the workflow.
@@ -31,15 +31,11 @@
 Windows:
 ```powershell
 .\scripts\setup_project.ps1 -ProjectRoot C:\ruta\a\tu_proyecto -InstallMCP -RunValidation
-# Force MCP reinstall
-.\scripts\setup_project.ps1 -ProjectRoot C:\ruta\a\tu_proyecto -InstallMCP -ForceMCP -RunValidation
 ```
 
 macOS/Linux:
 ```bash
 ./scripts/setup_project.sh /ruta/a/tu_proyecto --install-mcp --validate
-# Force MCP reinstall
-./scripts/setup_project.sh /ruta/a/tu_proyecto --install-mcp --force-mcp --validate
 ```
 
 ## Validation

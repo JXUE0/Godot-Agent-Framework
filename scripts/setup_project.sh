@@ -3,7 +3,6 @@ set -euo pipefail
 
 PROJECT_ROOT="${1:-}"
 INSTALL_MCP=false
-FORCE_MCP=false
 VALIDATE=false
 
 if [[ -z "$PROJECT_ROOT" ]]; then
@@ -15,7 +14,6 @@ shift || true
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --install-mcp) INSTALL_MCP=true ;;
-    --force-mcp) FORCE_MCP=true ;;
     --validate) VALIDATE=true ;;
   esac
   shift
@@ -29,11 +27,7 @@ fi
 
 if $INSTALL_MCP; then
   echo "[GAF][Setup] Installing MCP..."
-  if $FORCE_MCP; then
-    bash "$(dirname "$0")/install_mcp.sh" "$PROJECT_ROOT" --force
-  else
-    bash "$(dirname "$0")/install_mcp.sh" "$PROJECT_ROOT"
-  fi
+  bash "$(dirname "$0")/install_mcp.sh" "$PROJECT_ROOT"
 fi
 
 if $VALIDATE; then
