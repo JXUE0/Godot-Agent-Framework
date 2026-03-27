@@ -71,6 +71,9 @@ my_godot_game/
 - Security: `docs/SECURITY.md`
 - Handoffs: `docs/handoffs/`
 
+## Credits
+- Modified MCP addon based on Coding-Solo/godot-mcp (MIT). See THIRD_PARTY_NOTICES.md.
+
 ## References
 - Godot Engine: https://godotengine.org/
 - Godot Docs (stable): https://docs.godotengine.org/en/stable/
