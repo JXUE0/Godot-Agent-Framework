@@ -9,3 +9,4 @@ export_presets.cfg
 
 # Logs
 *.log
+\n# GAF temp\ntemp/\n\n# Generated docs\ndocs/generated/\n
