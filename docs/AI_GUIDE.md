@@ -33,3 +33,4 @@ Este framework NO copia addons por defecto. Si el proyecto ya tiene `addons/godo
 - QA valida cambios.
 - Producer coordina entregas.
 
+\n\n## 6. Reglas y hooks\n- Reglas base en ules/common/\n- Reglas Godot en ules/gdscript/\n- Hooks en hooks/ (profiles minimal/standard/strict)\n
