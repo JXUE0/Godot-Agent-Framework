@@ -57,3 +57,4 @@ while IFS= read -r -d '' file; do
 
 done < <(find "$PROJECT_ROOT" -type f -print0)
 
+

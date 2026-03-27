@@ -50,3 +50,4 @@ Get-ChildItem -Path $ProjectRoot -Recurse -File -Force -ErrorAction SilentlyCont
   }
 }
 
+

@@ -8,7 +8,7 @@ check() {
   local regex="$2"
   local replace="$3"
   local matches
-  matches=$(rg -n "$regex" "$PROJECT_ROOT" --glob "*.gd" || true)
+  matches=$(rg -n "$regex" "$PROJECT_ROOT" --glob "*.gd" --glob "!**/godot-agent-framework/**" --glob "!**/godot_mcp.backup-*/**" || true)
   if [[ -n "$matches" ]]; then
     while IFS= read -r line; do
       [[ -z "$line" ]] && continue
@@ -25,3 +25,4 @@ check "TileMap node" "\\bTileMap\\b" "TileMapLayer"
 check "YSort node" "\\bYSort\\b" "Node2D.y_sort_enabled"
 check "VisibilityNotifier2D" "\\bVisibilityNotifier2D\\b" "VisibleOnScreenNotifier2D"
 check "VisibilityNotifier3D" "\\bVisibilityNotifier3D\\b" "VisibleOnScreenNotifier3D"
+
