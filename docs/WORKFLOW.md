@@ -16,3 +16,4 @@
 - [ ] Assets validados
 - [ ] Documentación actualizada
 - [ ] QA informado
+\n\n## Handoffs\n- QA: docs/handoffs/qa_report.md\n- Lead Engineer: docs/handoffs/lead_review.md\n- Producer: docs/handoffs/producer_update.md\n
