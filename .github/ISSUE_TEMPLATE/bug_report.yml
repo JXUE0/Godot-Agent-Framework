@@ -1,0 +1,32 @@
+﻿name: Bug Report
+about: Report a bug or regression
+labels: [bug]
+
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide clear steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / validation report
+      description: Paste output from scripts/validate_project.* or relevant logs
+    validations:
+      required: false
