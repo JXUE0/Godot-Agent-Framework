@@ -26,35 +26,6 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-.lang {
-  display: flex;
-  gap: 8px;
-}
-
-.lang-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--fg);
-  padding: 6px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.lang-btn.active {
-  background: var(--bg-elev);
-  border-color: var(--accent);
-}
-
-.hidden { display: none; }
-
 .badge {
   display: inline-block;
   padding: 6px 10px;
