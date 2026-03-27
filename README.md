@@ -1,4 +1,4 @@
-﻿# Godot Agent Framework (GAF)
+﻿# Godot Agent Framework (GAF)\n\nWebsite: https://jxue0.github.io/Godot-Agent-Framework/
 
 **EN:** Drop‑in framework for Godot 4.x so AI can work like a professional studio team: clear roles, strict rules, real tooling, and MCP integration.  
 **ES:** Framework drop‑in para Godot 4.x para que la IA trabaje como un equipo profesional: roles claros, reglas estrictas, tooling real e integración MCP.
@@ -75,3 +75,4 @@ my_godot_game/
 
 ## License
 MIT
+
