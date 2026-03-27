@@ -55,7 +55,7 @@ func _enter_tree():
 	
 	# Connect signals
 	print("Connecting command handler signals...")
-	self.connect("command_received", Callable(command_handler, "_handle_command"))
+	command_received.connect(Callable(command_handler, "_handle_command"))
 	
 	# Start WebSocket server
 	var err = tcp_server.listen(port)
@@ -370,4 +370,5 @@ func stop_server() -> void:
 		
 func get_port() -> int:
 	return port
+
 

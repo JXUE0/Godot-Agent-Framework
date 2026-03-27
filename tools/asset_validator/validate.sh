@@ -4,7 +4,7 @@ set -euo pipefail
 PROJECT_ROOT="$1"
 FRAMEWORK_ROOT="$2"
 
-EXCLUDED_DIRS=(".godot" ".import" ".git" "node_modules" "bin" "obj")
+EXCLUDED_DIRS=(".godot" ".import" ".git" "node_modules" "bin" "obj" "godot-agent-framework")
 TEMP_EXTS=(".tmp" ".bak" ".swp" ".old" ".log")
 HEAVY_EXTS=(".psd" ".blend" ".kra" ".xcf" ".aep")
 ALLOWED_TEMP_DIRS=("temp" "tmp" "_temp" ".temp" "$FRAMEWORK_ROOT/temp")
@@ -56,3 +56,4 @@ while IFS= read -r -d '' file; do
   done
 
 done < <(find "$PROJECT_ROOT" -type f -print0)
+

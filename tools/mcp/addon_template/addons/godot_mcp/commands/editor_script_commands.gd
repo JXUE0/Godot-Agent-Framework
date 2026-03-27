@@ -1,4 +1,4 @@
-@tool
+﻿@tool
 class_name MCPEditorScriptCommands
 extends MCPBaseCommandProcessor
 
@@ -124,7 +124,7 @@ func _execute_code():
 	script_node.set_script(script)
 	
 	# Connect to the execution_completed signal
-	script_node.connect("execution_completed", _on_script_execution_completed.bind(script_node, client_id, command_id))
+	script_node.execution_completed.connect(_on_script_execution_completed.bind(script_node, client_id, command_id))
 
 	script_node.run()
 
@@ -179,3 +179,4 @@ func _replace_print_calls(code: String) -> String:
 		modified_code = modified_code.substr(0, start) + replacement + modified_code.substr(end)
 	
 	return modified_code
+

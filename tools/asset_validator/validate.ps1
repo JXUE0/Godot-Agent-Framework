@@ -49,3 +49,4 @@ Get-ChildItem -Path $ProjectRoot -Recurse -File -Force -ErrorAction SilentlyCont
     Write-Output "WARN: Archivo pesado/fuente detectado (revisar): $full"
   }
 }
+

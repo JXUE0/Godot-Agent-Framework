@@ -1,4 +1,4 @@
-@tool
+﻿@tool
 extends Control
 
 var websocket_server: MCPWebSocketServer
@@ -27,9 +27,9 @@ func _ready():
 	# Setup server signals once it's available
 	await get_tree().process_frame
 	if websocket_server:
-		websocket_server.connect("client_connected", Callable(self, "_on_client_connected"))
-		websocket_server.connect("client_disconnected", Callable(self, "_on_client_disconnected"))
-		websocket_server.connect("command_received", Callable(self, "_on_command_received"))
+		websocket_server.client_connected.connect(Callable(self, "_on_client_connected"))
+		websocket_server.client_disconnected.connect(Callable(self, "_on_client_disconnected"))
+		websocket_server.command_received.connect(Callable(self, "_on_command_received"))
 		
 		port_input.value = websocket_server.get_port()
 
