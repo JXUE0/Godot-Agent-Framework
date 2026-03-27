@@ -10,3 +10,4 @@
 \n- Technical Docs: docs/technical/\n
 - TSCN Format: docs/technical/tscn_format.md\n- QA Pipeline: docs/technical/qa_pipeline.md\n
 - Project Organization: docs/technical/project_organization.md\n
+- CI GUT (GitHub Actions): docs/technical/ci_gut_github_actions.md\n

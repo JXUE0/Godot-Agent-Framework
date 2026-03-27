@@ -34,3 +34,4 @@ Este framework NO copia addons por defecto. Si el proyecto ya tiene `addons/godo
 - Producer coordina entregas.
 
 \n\n## 6. Reglas y hooks\n- Reglas base en ules/common/\n- Reglas Godot en ules/gdscript/\n- Hooks en hooks/ (profiles minimal/standard/strict)\n
+\n\n## Quickstart IA (5 pasos)\n1. Leer docs/AI_GUIDE.md y docs/engine-reference/godot/README.md.\n2. Seleccionar rol en gents/ y revisar reglas.\n3. Ejecutar scripts/validate_project.* para conocer estado actual.\n4. Proponer plan y coordinar con Lead/QA/Producer.\n5. Ejecutar cambios y documentar handoff.\n
