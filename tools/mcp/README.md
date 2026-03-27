@@ -23,3 +23,4 @@ Habilitar integracion segura con Godot MCP cuando el proyecto ya tenga el addon 
 \n\n## Diagrama de flujo (alto nivel)\n\n`
 [IA / Cliente] \n    | WebSocket (localhost:9081)\n    v\n[Godot MCP Plugin]\n    | ToolExecutor\n    v\n[Tools: file/scene/script/project/assets]\n    | Resultados\n    v\n[IA]\n`
 \n### Resumen\n- Godot ejecuta el servidor local MCP.\n- La IA envia comandos por WebSocket.\n- El plugin procesa y responde con resultados.\n
+\n\n## Instalacion rapida (usuario o IA)\n\nWindows (PowerShell):\n\n`powershell\n# Desde el framework\n.\\scripts\\install_mcp.ps1 -ProjectRoot C:\\ruta\\a\\tu_proyecto_godot\n# Si ya existe, usar -Force\n.\\scripts\\install_mcp.ps1 -ProjectRoot C:\\ruta\\a\\tu_proyecto_godot -Force\n`\n\nmacOS/Linux:\n\n`ash\n# Desde el framework\n./scripts/install_mcp.sh /ruta/a/tu_proyecto_godot\n# Si ya existe, usar --force\n./scripts/install_mcp.sh /ruta/a/tu_proyecto_godot --force\n`\n
