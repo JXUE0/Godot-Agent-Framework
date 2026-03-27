@@ -10,28 +10,51 @@
 <body>
   <header class="hero">
     <div class="container">
-      <div class="badge">GAF · Godot Agent Framework</div>
-      <h1>Professional AI Agents for Godot 4.x</h1>
-      <p class="subtitle">
+      <div class="topbar">
+        <div class="badge">GAF · Godot Agent Framework</div>
+        <div class="lang">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+      </div>
+
+      <h1 data-lang="en">Professional AI Agents for Godot 4.x</h1>
+      <h1 data-lang="es" class="hidden">Agentes de IA profesionales para Godot 4.x</h1>
+
+      <p class="subtitle" data-lang="en">
         A drop‑in framework that makes AI work like a real studio team: roles, rules, tooling, MCP integration,
         and technical playbooks for safe, scalable development.
       </p>
+      <p class="subtitle hidden" data-lang="es">
+        Un framework drop‑in que hace que la IA trabaje como un equipo profesional: roles, reglas, tooling,
+        integración MCP y guías técnicas para desarrollo seguro y escalable.
+      </p>
+
       <div class="cta">
-        <a class="btn primary" href="#quickstart">Get Started</a>
-        <a class="btn ghost" href="README.md">Docs Index</a>
+        <a class="btn primary" href="#quickstart" data-lang="en">Get Started</a>
+        <a class="btn primary hidden" href="#quickstart" data-lang="es">Comenzar</a>
+        <a class="btn ghost" href="README.md" data-lang="en">Docs Index</a>
+        <a class="btn ghost hidden" href="README.md" data-lang="es">Índice Docs</a>
       </div>
+
       <div class="hero-grid">
         <div class="card">
-          <h3>Agents</h3>
-          <p>Defined roles, responsibilities, handoffs, and professional workflows.</p>
+          <h3 data-lang="en">Agents</h3>
+          <h3 data-lang="es" class="hidden">Agentes</h3>
+          <p data-lang="en">Defined roles, responsibilities, handoffs, and professional workflows.</p>
+          <p data-lang="es" class="hidden">Roles definidos, responsabilidades, handoffs y flujos profesionales.</p>
         </div>
         <div class="card">
-          <h3>Tools</h3>
-          <p>Real validators, deprecated API scanner, MCP checks, and reports.</p>
+          <h3 data-lang="en">Tools</h3>
+          <h3 data-lang="es" class="hidden">Herramientas</h3>
+          <p data-lang="en">Real validators, deprecated API scanner, MCP checks, and reports.</p>
+          <p data-lang="es" class="hidden">Validadores reales, scanner de APIs deprecadas, checks MCP y reportes.</p>
         </div>
         <div class="card">
-          <h3>Engine Reference</h3>
-          <p>Godot 4.x breaking changes, best practices, and module references.</p>
+          <h3 data-lang="en">Engine Reference</h3>
+          <h3 data-lang="es" class="hidden">Engine Reference</h3>
+          <p data-lang="en">Godot 4.x breaking changes, best practices, and module references.</p>
+          <p data-lang="es" class="hidden">Breaking changes, buenas prácticas y módulos Godot 4.x.</p>
         </div>
       </div>
     </div>
@@ -39,23 +62,32 @@
 
   <section class="section" id="features">
     <div class="container">
-      <h2>Features</h2>
+      <h2 data-lang="en">Features</h2>
+      <h2 data-lang="es" class="hidden">Características</h2>
       <div class="grid">
         <div class="card">
-          <h3>Professional Roles</h3>
-          <p>Lead, QA, tools, gameplay, design and more with strict rules.</p>
+          <h3 data-lang="en">Professional Roles</h3>
+          <h3 data-lang="es" class="hidden">Roles Profesionales</h3>
+          <p data-lang="en">Lead, QA, tools, gameplay, design and more with strict rules.</p>
+          <p data-lang="es" class="hidden">Lead, QA, tools, gameplay, diseño y más con reglas estrictas.</p>
         </div>
         <div class="card">
-          <h3>MCP Clean Addon</h3>
-          <p>Reusable MCP template plus installers for easy setup.</p>
+          <h3 data-lang="en">MCP Clean Addon</h3>
+          <h3 data-lang="es" class="hidden">Addon MCP Limpio</h3>
+          <p data-lang="en">Reusable MCP template plus installers for easy setup.</p>
+          <p data-lang="es" class="hidden">Template MCP reusable con instaladores fáciles.</p>
         </div>
         <div class="card">
-          <h3>Validation Pipeline</h3>
-          <p>Structure, assets, deprecated APIs, and MCP validation.</p>
+          <h3 data-lang="en">Validation Pipeline</h3>
+          <h3 data-lang="es" class="hidden">Pipeline de Validación</h3>
+          <p data-lang="en">Structure, assets, deprecated APIs, and MCP validation.</p>
+          <p data-lang="es" class="hidden">Estructura, assets, APIs deprecadas y validación MCP.</p>
         </div>
         <div class="card">
-          <h3>Technical Docs</h3>
-          <p>Architecture, conventions, CI testing, TSCN format, QA pipeline.</p>
+          <h3 data-lang="en">Technical Docs</h3>
+          <h3 data-lang="es" class="hidden">Docs Técnicas</h3>
+          <p data-lang="en">Architecture, conventions, CI testing, TSCN format, QA pipeline.</p>
+          <p data-lang="es" class="hidden">Arquitectura, convenciones, CI, formato TSCN, pipeline QA.</p>
         </div>
       </div>
     </div>
@@ -63,31 +95,40 @@
 
   <section class="section" id="quickstart">
     <div class="container">
-      <h2>Quickstart</h2>
+      <h2 data-lang="en">Quickstart</h2>
+      <h2 data-lang="es" class="hidden">Inicio Rápido</h2>
       <div class="two-col">
         <div>
-          <h3>Windows</h3>
+          <h3 data-lang="en">Windows</h3>
+          <h3 data-lang="es" class="hidden">Windows</h3>
           <pre><code>.\scripts\setup_project.ps1 -ProjectRoot C:\ruta\tu_proyecto -InstallMCP -RunValidation
-# Forzar reinstalacion MCP
+# Forzar reinstalación MCP
 .\scripts\setup_project.ps1 -ProjectRoot C:\ruta\tu_proyecto -InstallMCP -ForceMCP -RunValidation</code></pre>
         </div>
         <div>
-          <h3>macOS / Linux</h3>
+          <h3 data-lang="en">macOS / Linux</h3>
+          <h3 data-lang="es" class="hidden">macOS / Linux</h3>
           <pre><code>./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --validate
-# Forzar reinstalacion MCP
+# Forzar reinstalación MCP
 ./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --force-mcp --validate</code></pre>
         </div>
       </div>
-      <p class="note">Then read <code>docs/AI_GUIDE.md</code> and follow the workflow.</p>
+      <p class="note" data-lang="en">Then read <code>docs/AI_GUIDE.md</code> and follow the workflow.</p>
+      <p class="note hidden" data-lang="es">Luego lee <code>docs/AI_GUIDE.md</code> y sigue el flujo.</p>
     </div>
   </section>
 
   <section class="section" id="mcp">
     <div class="container">
-      <h2>MCP Integration</h2>
-      <p>
+      <h2 data-lang="en">MCP Integration</h2>
+      <h2 data-lang="es" class="hidden">Integración MCP</h2>
+      <p data-lang="en">
         MCP runs a local WebSocket server inside Godot so AI tools can inspect scenes,
         scripts, and project settings safely. Install with the scripts above and enable the plugin in Godot.
+      </p>
+      <p data-lang="es" class="hidden">
+        MCP ejecuta un servidor WebSocket local en Godot para que la IA inspeccione escenas,
+        scripts y settings. Instala con los scripts y activa el plugin en Godot.
       </p>
       <div class="card">
         <pre><code>[IA / Cliente]
@@ -106,7 +147,8 @@
 
   <section class="section" id="docs">
     <div class="container">
-      <h2>Documentation</h2>
+      <h2 data-lang="en">Documentation</h2>
+      <h2 data-lang="es" class="hidden">Documentación</h2>
       <div class="grid">
         <a class="link-card" href="AI_GUIDE.md">AI Guide</a>
         <a class="link-card" href="WORKFLOW.md">Workflow</a>
@@ -120,11 +162,15 @@
 
   <section class="section" id="roadmap">
     <div class="container">
-      <h2>Roadmap</h2>
+      <h2 data-lang="en">Roadmap</h2>
+      <h2 data-lang="es" class="hidden">Roadmap</h2>
       <ul class="list">
-        <li>More CI templates and test coverage guidance.</li>
-        <li>Extended MCP tooling for scene analysis.</li>
-        <li>Additional agent playbooks and checklists.</li>
+        <li data-lang="en">More CI templates and test coverage guidance.</li>
+        <li data-lang="es" class="hidden">Más plantillas de CI y guía de cobertura de tests.</li>
+        <li data-lang="en">Extended MCP tooling for scene analysis.</li>
+        <li data-lang="es" class="hidden">Más tooling MCP para análisis de escenas.</li>
+        <li data-lang="en">Additional agent playbooks and checklists.</li>
+        <li data-lang="es" class="hidden">Más playbooks y checklists para agentes.</li>
       </ul>
     </div>
   </section>
@@ -135,5 +181,20 @@
       <span>MIT License</span>
     </div>
   </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.lang-btn');
+    const nodes = document.querySelectorAll('[data-lang]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        buttons.forEach(b => b.classList.toggle('active', b === btn));
+        nodes.forEach(n => {
+          const show = n.dataset.lang === lang;
+          n.classList.toggle('hidden', !show);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
