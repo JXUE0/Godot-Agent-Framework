@@ -1,45 +1,55 @@
 ﻿# Godot Agent Framework (GAF)
 
-Framework drop-in para proyectos Godot 4.x que permite a cualquier IA trabajar de forma profesional con agentes, herramientas y estándares definidos.
+**EN:** Drop‑in framework for Godot 4.x so AI can work like a professional studio team: clear roles, strict rules, real tooling, and MCP integration.  
+**ES:** Framework drop‑in para Godot 4.x para que la IA trabaje como un equipo profesional: roles claros, reglas estrictas, tooling real e integración MCP.
 
-## Que ofrece
-- Agentes profesionales con roles y reglas estrictas.
-- Engine reference Godot 4.x para evitar APIs deprecadas.
-- Herramientas de validacion reales (estructura, assets, deprecated APIs, MCP).
-- Integracion MCP limpia y reusable.
-- Flujo de trabajo determinista para IA y usuarios.
+## Highlights
+- Professional agent roles with strict rules and handoffs.
+- Godot 4.x engine reference (breaking changes, deprecated APIs).
+- Real validators (structure, assets, deprecated APIs, MCP).
+- Clean MCP template + installers.
+- Deterministic workflows and technical documentation.
 
-## Instalacion (Drop-in)
-1. Descarga o clona este repositorio dentro de tu proyecto Godot:
-   `my_godot_game/godot-agent-framework/`
-2. (Opcional) Instala MCP usando el setup automatico.
-3. Lee `docs/AI_GUIDE.md` y sigue el flujo.
+## Quickstart
+```text
+1) Clone this repo inside your Godot project:
+   my_godot_game/godot-agent-framework/
+2) Run setup (installs MCP + validates):
+   Windows: .\scripts\setup_project.ps1 -ProjectRoot C:\ruta\tu_proyecto -InstallMCP -RunValidation
+   macOS/Linux: ./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --validate
+3) Read docs/AI_GUIDE.md and follow the workflow.
+```
 
-## Setup automatico
+## Installation (Drop‑in)
+1. Clone/download inside your Godot project.
+2. (Optional) Install MCP with the scripts.
+3. Run validation and follow `docs/AI_GUIDE.md`.
+
+## Automatic setup
 Windows:
 ```powershell
 .\scripts\setup_project.ps1 -ProjectRoot C:\ruta\a\tu_proyecto -InstallMCP -RunValidation
-# Forzar reinstalacion MCP
+# Force MCP reinstall
 .\scripts\setup_project.ps1 -ProjectRoot C:\ruta\a\tu_proyecto -InstallMCP -ForceMCP -RunValidation
 ```
 
 macOS/Linux:
 ```bash
 ./scripts/setup_project.sh /ruta/a/tu_proyecto --install-mcp --validate
-# Forzar reinstalacion MCP
+# Force MCP reinstall
 ./scripts/setup_project.sh /ruta/a/tu_proyecto --install-mcp --force-mcp --validate
 ```
 
-## Validacion
-- Ejecuta `scripts/validate_project.*` para correr todos los checks.
-- Reporte generado en `docs/generated/validation-report.md`.
+## Validation
+- Run `scripts/validate_project.*` to execute all checks.
+- Report generated at `docs/generated/validation-report.md`.
 
 ## MCP (Addon)
-- Template limpio en `tools/mcp/addon_template/`.
-- Instalacion rapida con `scripts/install_mcp.*`.
-- Godot reconoce el plugin si esta en `addons/godot_mcp`.
+- Clean template at `tools/mcp/addon_template/`.
+- Quick install via `scripts/install_mcp.*`.
+- Godot recognizes the plugin when placed in `addons/godot_mcp`.
 
-## Estructura recomendada
+## Recommended structure
 ```
 my_godot_game/
 ├── project.godot
@@ -56,5 +66,12 @@ my_godot_game/
     └── ...
 ```
 
-## Licencia
+## Documentation
+- Docs index: `docs/README.md`
+- AI Guide: `docs/AI_GUIDE.md`
+- Engine Reference: `docs/engine-reference/godot/README.md`
+- Security: `docs/SECURITY.md`
+- Handoffs: `docs/handoffs/`
+
+## License
 MIT
