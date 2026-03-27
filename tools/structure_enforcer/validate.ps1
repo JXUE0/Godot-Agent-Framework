@@ -7,6 +7,7 @@
 $projectFile = Join-Path $ProjectRoot 'project.godot'
 $frameworkDir = Join-Path $ProjectRoot 'godot-agent-framework'
 $templatesDir = Join-Path $FrameworkRoot 'tools\scene_templates'
+$mcpTemplateDir = Join-Path $FrameworkRoot 'tools\mcp\addon_template'
 $expectedDirs = @('scenes', 'scripts', 'assets', 'addons')
 
 if (-not $FrameworkOnly) {
@@ -28,7 +29,7 @@ if (-not $FrameworkOnly) {
 
 Get-ChildItem -Path $FrameworkRoot -Recurse -Filter *.tscn -File -ErrorAction SilentlyContinue | ForEach-Object {
   $full = $_.FullName
-  if ($full -notlike "$templatesDir*" ) {
-    Write-Output "WARN: Escena dentro del framework fuera de scene_templates: $full"
-  }
+  if ($full -like "$templatesDir*") { return }
+  if ($full -like "$mcpTemplateDir*") { return }
+  Write-Output "WARN: Escena dentro del framework fuera de scene_templates: $full"
 }

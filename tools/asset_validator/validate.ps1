@@ -3,7 +3,7 @@
   [Parameter(Mandatory=$true)][string]$FrameworkRoot
 )
 
-$excludedDirs = @('.godot', '.import', '.git', 'node_modules', 'bin', 'obj')
+$excludedDirs = @('.godot', '.import', '.git', 'node_modules', 'bin', 'obj', 'godot-agent-framework')
 $tempExtensions = @('.tmp', '.bak', '.swp', '.old', '.log')
 $heavyExtensions = @('.psd', '.blend', '.kra', '.xcf', '.aep')
 $allowedTempDirs = @('temp', 'tmp', '_temp', '.temp', (Join-Path $FrameworkRoot 'temp'))
