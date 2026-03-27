@@ -1,14 +1,21 @@
-﻿# Third-Party Notices
+# Third-Party Notices - Godot Agent Framework (GAF)
 
-This project includes modified files derived from:
+The Godot Agent Framework (GAF) is a collaborative project derived from:
 
-- Coding-Solo/godot-mcp (https://github.com/Coding-Solo/godot-mcp)
-  License: MIT
-  Copyright (c) 2025 Solomon Elias
+- **Coding-Solo/godot-mcp** (https://github.com/Coding-Solo/godot-mcp)
+- License: MIT
+- Copyright (c) 2025 Solomon Elias
+
+## Evolution and Modifications (V1.3.1)
+The original project provided the conceptual foundation for Model Context Protocol (MCP) interactions within Godot. GAF V1.3.1 represents a significant evolution characterized by:
+
+1. **Pure TCP Architecture:** Complete migration from third-party WebSocket libraries to native StreamPeerTCP (Godot) and pure Node.js 'net' module (Bridge).
+2. **Zero Dependencies:** Elimination of all external Node.js packages (e.g., 'ws', 'mcp-sdk') for total portability.
+3. **Editor Synchronization:** Enhanced EditorPlugin integration for real-time Scene Tree manipulation and script hot-reloading.
 
 ---
 
-MIT License
+### MIT License (Precursor Project)
 
 Copyright (c) 2025 Solomon Elias
 

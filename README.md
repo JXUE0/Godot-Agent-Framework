@@ -1,71 +1,59 @@
-# Godot Agent Framework (GAF)
+# Godot Agent Framework (GAF) - V1.3.1 (Pure TCP)
 
-[![CI](https://github.com/JXUE0/Godot-Agent-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/JXUE0/Godot-Agent-Framework/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/JXUE0/Godot-Agent-Framework)](https://github.com/JXUE0/Godot-Agent-Framework/releases)
-[![Pages](https://img.shields.io/badge/pages-live-brightgreen)](https://jxue0.github.io/Godot-Agent-Framework/)
+The **Godot Agent Framework (GAF)** is a professional, high-performance, and secure ecosystem designed to empower AI Agents in autonomous game development. It establishes a robust bi-directional communication channel between AI models and the Godot Editor API, enabling real-time scene manipulation, script editing, and project lifecycle management.
 
-**EN:** Drop-in framework for Godot 4.x so AI can work like a professional studio team: clear roles, strict rules, real tooling, and MCP integration.  
-**ES:** Framework drop-in para Godot 4.x para que la IA trabaje como un equipo profesional: roles claros, reglas estrictas, tooling real e integracion MCP.
+## 🏛️ Ecosystem Architecture
+
+GAF is organized into specialized modules to ensure maximum flexibility and reliability across different development environments:
+
+### 1. The Intelligence Layer (`agents/`)
+Contains specialized AI profiles designed to execute complex Godot tasks:
+- **Lead Engineer:** Orchestrates framework health and deployment.
+- **Gameplay Programmer:** Implements mechanics and logic systems.
+- **Technical Artist:** Manages visual assets, shaders, and scene layouts.
+
+### 2. The Communication Tunnel (`tools/mcp/`)
+The **GAF-Bridge** is a lightweight, zero-dependency Node.js gateway that routes instructions:
+- **Protocol:** Pure TCP (Standard JSON-RPC 2.0).
+- **Port:** Static 1342.
+- **Security:** Localhost filtering (IP Loopback only, 127.0.0.1).
+- **Isolation:** No external packages required (`npm install`-free).
+
+### 3. The Execution Engine (`addons/gaf_sync/`)
+The **GAF-Sync Engine** is a native Godot Editor Plugin that serves as the AI's "hands" inside the engine:
+- **Connectivity:** TCP Client mode connecting to GAF-Bridge.
+- **Access:** Direct interface with `EditorInterface`, `EditorFileSystem`, and `SceneTree`.
+- **Feedback:** Real-time visual status reporting in the Editor console.
+
+### 4. The Automation Subsystem (`scripts/`)
+Infrastructure tools for seamless framework integration:
+- `setup_project.ps1`: Automated project setup and plugin deployment.
+- `install_mcp.ps1`: One-click GAF-Sync injection into target projects.
+
+## ⚙️ How it Works (The GAF Loop)
+
+The framework follows a deterministic command-and-execution cycle:
+1. **Request:** The AI Agent generates a JSON-RPC command (e.g., `create_node`).
+2. **Tunneling:** GAF-Bridge receives the request via STDIO and forwards it through the TCP 1342 socket.
+3. **Execution:** GAF-Sync Engine parse the request, executes the corresponding Godot Editor API call, and captures the result.
+4. **Response:** Synchronized result or project state is returned through the tunnel back to the Agent.
+
+## 🚀 Quick Deployment Guide
+
+To deploy GAF in your development environment:
+
+1. **Initialize Project:**
+   ```powershell
+   powershell -File "scripts/setup_project.ps1" -ProjectRoot "C:/YourProject" -InstallMCP
+   ```
+2. **Launch GAF-Bridge:**
+   ```bash
+   node tools/mcp/gaf_bridge.js
+   ```
+3. **Connect Editor:**
+   Open Godot 4.3+, navigate to `Project Settings > Plugins`, and enable **"GAF-Sync Engine"**.
 
 ---
 
-## 🤖 AI Models & Compatibility
-GAF is designed to be **Universal**. It provides automatic configuration for the following AI environments:
-
-| Tool / Model | Entry Point | GAF Access | Recommended Roles |
-| :--- | :--- | :--- | :--- |
-| **Cursor / Windsurf** | `.cursorrules` | Full access to `agents/`, `docs/`, `tools/` | All Specialists |
-| **Cline / Roo Code** | `.clinerules` | Full project context + Agent workflows | Architecture & QA |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | Inline chat & code completion context | Progamming & Debugging |
-| **ChatGPT / Claude Web**| `AI_BOOTSTRAP.md` | User must upload or point to this file | Strategic Planning |
-
-> [!TIP]
-> **Universal Prompt:** If your AI doesn't recognize the framework automatically, paste this:
-> *"I am using Godot Agent Framework (GAF). Please read the documentation in `godot-agent-framework/agents/` and assume the role of the best agent for my next request."*
-
----
-
-## ⚙️ How it Works (AI Workflow)
-When you ask for a feature, the AI will:
-1. **Identify Role**: Accesses `agents/` to choose a specialist (e.g., `gameplay_programmer.md`).
-2. **Context Check**: Reads `docs/engine-reference/` to avoid Godot 3.x legacy code.
-3. **Execute via MCP**: Uses the `godot_mcp` addon tools to interact with your Scene Tree in real-time.
-4. **Handoff**: Generates a professional report in `docs/handoffs/`.
-
----
-
-## 🚀 Quickstart
-1. Clone this repo inside your Godot project:
-   `my_godot_game/godot-agent-framework/`
-2. Run GAF Setup (installs MCP + AI Rules):
-   - **Windows:** `.\scripts\setup_project.ps1 -ProjectRoot ..\ -InstallMCP`
-   - **macOS/Linux:** `./scripts/setup_project.sh ../ --install-mcp`
-3. Ask your AI to perform a task. It will automatically detect `.cursorrules` or `.clinerules`.
-
----
-
-## 🏗️ Folder Structure
-```
-my_godot_game/
-|-- .cursorrules           <-- AI Brain (Root)
-|-- .clinerules            <-- AI Brain (Root)
-|-- .github/               <-- Copilot instructions
-|-- addons/godot_mcp/      <-- MCP Server (Plugin)
-`-- godot-agent-framework/
-    |-- agents/            <-- Role-based Agent MDs
-    |-- docs/              <-- Engine Ref & Handoff templates
-    |-- tools/             <-- MCP Template & installers
-    `-- scripts/           <-- Validation & Setup scripts
-```
-
-## 🛠️ Validation
-Run `scripts/validate_project.*` to execute all checks. Report generated at `docs/generated/validation-report.md`.
-
-## 📜 Documentation
-- Docs index: `docs/README.md`
-- AI Guide: `docs/AI_GUIDE.md`
-- Engine Reference: `docs/engine-reference/godot/README.md`
-- Handoffs: `docs/handoffs/`
-
-## ⚖️ License
-MIT. See THIRD_PARTY_NOTICES.md for MCP addon credits (based on Coding-Solo).
+### Professional Standards & Licensing
+GAF is built for high-level engineering environments. It is a derivative work evolved from Solomon Elias's **godot-mcp**. Full legal and third-party details are documented in `THIRD_PARTY_NOTICES.md`.
