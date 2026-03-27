@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Godot Agent Framework — GAF</title>
+  <meta name="description" content="Professional multi-agent framework for Godot 4.x with MCP integration, validators, and technical playbooks." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="badge">GAF · Godot Agent Framework</div>
+      <h1>Professional AI Agents for Godot 4.x</h1>
+      <p class="subtitle">
+        A drop‑in framework that makes AI work like a real studio team: roles, rules, tooling, MCP integration,
+        and technical playbooks for safe, scalable development.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#quickstart">Get Started</a>
+        <a class="btn ghost" href="README.md">Docs Index</a>
+      </div>
+      <div class="hero-grid">
+        <div class="card">
+          <h3>Agents</h3>
+          <p>Defined roles, responsibilities, handoffs, and professional workflows.</p>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <p>Real validators, deprecated API scanner, MCP checks, and reports.</p>
+        </div>
+        <div class="card">
+          <h3>Engine Reference</h3>
+          <p>Godot 4.x breaking changes, best practices, and module references.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Professional Roles</h3>
+          <p>Lead, QA, tools, gameplay, design and more with strict rules.</p>
+        </div>
+        <div class="card">
+          <h3>MCP Clean Addon</h3>
+          <p>Reusable MCP template plus installers for easy setup.</p>
+        </div>
+        <div class="card">
+          <h3>Validation Pipeline</h3>
+          <p>Structure, assets, deprecated APIs, and MCP validation.</p>
+        </div>
+        <div class="card">
+          <h3>Technical Docs</h3>
+          <p>Architecture, conventions, CI testing, TSCN format, QA pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quickstart">
+    <div class="container">
+      <h2>Quickstart</h2>
+      <div class="two-col">
+        <div>
+          <h3>Windows</h3>
+          <pre><code>.\scripts\setup_project.ps1 -ProjectRoot C:\ruta\tu_proyecto -InstallMCP -RunValidation
+# Forzar reinstalacion MCP
+.\scripts\setup_project.ps1 -ProjectRoot C:\ruta\tu_proyecto -InstallMCP -ForceMCP -RunValidation</code></pre>
+        </div>
+        <div>
+          <h3>macOS / Linux</h3>
+          <pre><code>./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --validate
+# Forzar reinstalacion MCP
+./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --force-mcp --validate</code></pre>
+        </div>
+      </div>
+      <p class="note">Then read <code>docs/AI_GUIDE.md</code> and follow the workflow.</p>
+    </div>
+  </section>
+
+  <section class="section" id="mcp">
+    <div class="container">
+      <h2>MCP Integration</h2>
+      <p>
+        MCP runs a local WebSocket server inside Godot so AI tools can inspect scenes,
+        scripts, and project settings safely. Install with the scripts above and enable the plugin in Godot.
+      </p>
+      <div class="card">
+        <pre><code>[IA / Cliente]
+  | WebSocket (localhost:9081)
+  v
+[Godot MCP Plugin]
+  | ToolExecutor
+  v
+[Tools: file/scene/script/project/assets]
+  | Resultados
+  v
+[IA]</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="docs">
+    <div class="container">
+      <h2>Documentation</h2>
+      <div class="grid">
+        <a class="link-card" href="AI_GUIDE.md">AI Guide</a>
+        <a class="link-card" href="WORKFLOW.md">Workflow</a>
+        <a class="link-card" href="PROJECT_STRUCTURE.md">Project Structure</a>
+        <a class="link-card" href="GODOT_BEST_PRACTICES.md">Godot Best Practices</a>
+        <a class="link-card" href="technical/architecture.md">Architecture</a>
+        <a class="link-card" href="technical/tools_guide.md">Tools Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="roadmap">
+    <div class="container">
+      <h2>Roadmap</h2>
+      <ul class="list">
+        <li>More CI templates and test coverage guidance.</li>
+        <li>Extended MCP tooling for scene analysis.</li>
+        <li>Additional agent playbooks and checklists.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <span>Godot Agent Framework · v1.0.0</span>
+      <span>MIT License</span>
+    </div>
+  </footer>
+</body>
+</html>
