@@ -12,8 +12,9 @@
 - QA Pipeline: docs/technical/qa_pipeline.md
 - CI GUT (GitHub Actions): docs/technical/ci_gut_github_actions.md
 - Project Organization: docs/technical/project_organization.md
+- Third-Party Notices: THIRD_PARTY_NOTICES.md
 
-## Español
+## Espanol
 - docs/es/AI_GUIDE.md
 - docs/es/WORKFLOW.md
 - docs/es/PROJECT_STRUCTURE.md
@@ -21,4 +22,4 @@
 - docs/es/SECURITY.md
 - docs/es/HOW_TO_USE_AGENTS.md
 - docs/es/README.md
-- MCP Installation: docs/technical/mcp_installation.md\n
+- MCP Installation: docs/technical/mcp_installation.md
