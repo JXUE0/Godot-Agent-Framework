@@ -6,4 +6,5 @@ Indice de referencia para agentes. Revisar siempre antes de sugerir APIs o patro
 - `breaking-changes.md`
 - `current-best-practices.md`
 - `deprecated-apis.md`
-- `modules/` (animacion, audio, input, navigation, networking, physics, rendering, ui)
+- `modules/` (animacion, audio, input, navigation, networking, physics, rendering, ui, 2d, 3d, shaders, editor, export, build, resources, scripting, scenes)
+
