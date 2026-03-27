@@ -1,13 +1,13 @@
-﻿param(
+param(
   [Parameter(Mandatory=$true)][string]$ProjectRoot,
   [switch]$Force
 )
 
-$addonSrc = Join-Path $PSScriptRoot '..\tools\mcp\addon_template\addons\godot_mcp'
-$addonDst = Join-Path $ProjectRoot 'addons\godot_mcp'
+$addonSrc = Join-Path $PSScriptRoot '..\tools\mcp\addon_template\addons\gaf_sync'
+$addonDst = Join-Path $ProjectRoot 'addons\gaf_sync'
 
 if (Test-Path $addonDst) {
-  Write-Host "[GAF][MCP] MCP ya instalado en $addonDst. No se realizaron cambios."
+  Write-Host "[GAF][MCP] GAF-Sync ya instalado en $addonDst. No se realizaron cambios."
   exit 0
 }
 

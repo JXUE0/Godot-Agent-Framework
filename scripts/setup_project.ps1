@@ -35,7 +35,10 @@ if (Test-Path $copilotSource) {
 
 if ($InstallMCP) {
   Write-Host "[GAF][Setup] Instalando MCP..."
-  $mcpArgs = @("-ProjectRoot", $ProjectRoot)
+  $mcpArgs = @{
+    ProjectRoot = $ProjectRoot
+    Force = $ForceMCP
+  }
   & (Join-Path $PSScriptRoot 'install_mcp.ps1') @mcpArgs
 }
 

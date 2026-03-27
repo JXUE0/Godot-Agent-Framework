@@ -1,14 +1,14 @@
-﻿@tool
+@tool
 extends EditorPlugin
 
 var tcp_server := TCPServer.new()
-var port := 9081  # Configurable via ProjectSettings
-var handshake_timeout := 3000 # ms
+var port := 1342  # Standard GAF port
+var handshake_timeout := 5000 # ms
 var debug_mode := true
 var log_detailed := true  # Enable detailed logging
 var command_handler = null  # Command handler reference
 var allow_remote_connections := false
-var require_auth := true
+var require_auth := false # Disabled by default for GAF sync
 var auth_token := ""
 var allow_unsafe_commands := false
 

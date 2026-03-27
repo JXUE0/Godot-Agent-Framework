@@ -9,7 +9,8 @@
 1. **Identify Your Role**: Before any task, check `agents/`. Choose the appropriate specialist (e.g., `gameplay_programmer.md`, `qa_engineer.md`, `lead_engineer.md`).
 2. **Read the Source of Truth**: Read the `.md` file of your chosen agent BEFORE writing any code or modifying scenes.
 3. **Godot 4.x Standards**: Never use deprecated APIs. Consult `docs/engine-reference/` if you are unsure about changes between 3.x and 4.x.
-4. **Tool usage**: Use the MCP Server (Godot-MCP) to interact with the Godot Scene Tree, Nodes, and Project Settings whenever possible. Do not guess scene structures; INSPECT them using MCP.
+4. **Tool usage**: Use the MCP Server (Godot-MCP) to interact with the Godot Scene Tree, Nodes, and Project Settings on port **1342** (WebSocket). 
+5. **Plugin Activation**: If the MCP connection fails (timeout), NOTIFY the user to activate the "Godot MCP" plugin in `Project Settings -> Plugins`.
 
 ## 🛠️ MCP CAPABILITIES (GODOT-MCP)
 You have access to specialized tools for Godot:

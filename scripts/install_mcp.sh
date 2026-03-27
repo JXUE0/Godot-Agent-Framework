@@ -1,14 +1,14 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 PROJECT_ROOT="$1"
 FORCE="${2:-}"
 
-ADDON_SRC="$(cd "$(dirname "$0")/.." && pwd)/tools/mcp/addon_template/addons/godot_mcp"
-ADDON_DST="$PROJECT_ROOT/addons/godot_mcp"
+ADDON_SRC="$(cd "$(dirname "$0")/.." && pwd)/tools/mcp/addon_template/addons/gaf_sync"
+ADDON_DST="$PROJECT_ROOT/addons/gaf_sync"
 
 if [[ -d "$ADDON_DST" ]]; then
-  echo "[GAF][MCP] MCP already installed at $ADDON_DST. No changes made."
+  echo "[GAF][MCP] GAF-Sync already installed at $ADDON_DST. No changes made."
   exit 0
 fi
 
