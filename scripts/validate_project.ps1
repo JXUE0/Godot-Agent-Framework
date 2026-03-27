@@ -24,3 +24,4 @@ Write-Host "[GAF] Reporte: $reportPath"
 
 if ($errors.Count -gt 0) { exit 1 }
 
+
