@@ -10,8 +10,8 @@ if [[ ! -f "$PROJECT_ROOT/project.godot" ]]; then
 fi
 
 mapfile -t STRUCTURE < <("$FRAMEWORK_ROOT/tools/structure_enforcer/validate.sh" "$PROJECT_ROOT" "$FRAMEWORK_ROOT")
-mapfile -t ASSETS < <("$FRAMEWORK_ROOT/tools/asset_validator/validate.sh" "$PROJECT_ROOT" "$FRAMEWORK_ROOT")
-FINDINGS=("${STRUCTURE[@]}" "${ASSETS[@]}")
+mapfile -t ASSETS < <("$FRAMEWORK_ROOT/tools/asset_validator/validate.sh" "$PROJECT_ROOT" "$FRAMEWORK_ROOT")\nmapfile -t DEPRECATED < <("$FRAMEWORK_ROOT/tools/structure_enforcer/deprecated_apis.sh" "$PROJECT_ROOT")
+FINDINGS=("${STRUCTURE[@]}" "${ASSETS[@]}" "${DEPRECATED[@]}")
 
 REPORT_PATH="$FRAMEWORK_ROOT/docs/generated/validation-report.md"
 "$FRAMEWORK_ROOT/tools/docs_generator/generate_report.sh" "$FRAMEWORK_ROOT" "$REPORT_PATH" "${FINDINGS[@]}"
@@ -29,3 +29,4 @@ echo "[GAF] Reporte: $REPORT_PATH"
 if [[ ${#ERRORS[@]} -gt 0 ]]; then
   exit 1
 fi
+
