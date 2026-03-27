@@ -11,3 +11,4 @@
 
 ## Validación
 - Ejecutar validadores antes de entrega.
+\n\n## Referencia de versiones\nAntes de sugerir APIs, revisar docs/engine-reference/godot/ (version, breaking changes y deprecated APIs).\n
