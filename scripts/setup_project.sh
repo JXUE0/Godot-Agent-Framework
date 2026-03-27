@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 PROJECT_ROOT="${1:-}"
@@ -21,13 +21,29 @@ done
 
 echo "[GAF][Setup] Project detected: $PROJECT_ROOT"
 
-if [[ ! -f "$PROJECT_ROOT/project.godot" ]]; then
-  echo "[GAF][Setup] WARNING: project.godot not found in $PROJECT_ROOT"
+# Bash logic for AI rules
+GAF_ROOT="$(dirname "$0")"
+for rule in .cursorrules .clinerules; do
+  SOURCE="$GAF_ROOT/../$rule"
+  DEST="$PROJECT_ROOT/$rule"
+  if [[ -f "$SOURCE" ]]; then
+    echo "[GAF][Setup] Copying AI rules ($rule) to $PROJECT_ROOT"
+    cp -f "$SOURCE" "$DEST"
+  fi
+done
+
+# Copy GitHub Copilot instructions
+COPILOT_SOURCE="$GAF_ROOT/../.github/copilot-instructions.md"
+GITHUB_DEST="$PROJECT_ROOT/.github"
+if [[ -f "$COPILOT_SOURCE" ]]; then
+  mkdir -p "$GITHUB_DEST"
+  echo "[GAF][Setup] Copying GitHub Copilot instructions to $GITHUB_DEST"
+  cp -f "$COPILOT_SOURCE" "$GITHUB_DEST/copilot-instructions.md"
 fi
 
 if $INSTALL_MCP; then
   echo "[GAF][Setup] Installing MCP..."
-  bash "$(dirname "$0")/install_mcp.sh" "$PROJECT_ROOT"
+  bash "$GAF_ROOT/install_mcp.sh" "$PROJECT_ROOT"
 fi
 
 if $VALIDATE; then

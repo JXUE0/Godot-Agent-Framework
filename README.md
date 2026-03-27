@@ -1,4 +1,4 @@
-﻿# Godot Agent Framework (GAF)
+# Godot Agent Framework (GAF)
 
 [![CI](https://github.com/JXUE0/Godot-Agent-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/JXUE0/Godot-Agent-Framework/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/JXUE0/Godot-Agent-Framework)](https://github.com/JXUE0/Godot-Agent-Framework/releases)
@@ -7,84 +7,65 @@
 **EN:** Drop-in framework for Godot 4.x so AI can work like a professional studio team: clear roles, strict rules, real tooling, and MCP integration.  
 **ES:** Framework drop-in para Godot 4.x para que la IA trabaje como un equipo profesional: roles claros, reglas estrictas, tooling real e integracion MCP.
 
-## Highlights
-- Professional agent roles with strict rules and handoffs.
-- Godot 4.x engine reference (breaking changes, deprecated APIs).
-- Real validators (structure, assets, deprecated APIs, MCP).
-- Clean MCP template + installers.
-- Deterministic workflows and technical documentation.
+---
 
-## Quickstart
+## 🤖 AI Models & Compatibility
+GAF is designed to be **Universal**. It provides automatic configuration for the following AI environments:
+
+| Tool / Model | Entry Point | GAF Access | Recommended Roles |
+| :--- | :--- | :--- | :--- |
+| **Cursor / Windsurf** | `.cursorrules` | Full access to `agents/`, `docs/`, `tools/` | All Specialists |
+| **Cline / Roo Code** | `.clinerules` | Full project context + Agent workflows | Architecture & QA |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Inline chat & code completion context | Progamming & Debugging |
+| **ChatGPT / Claude Web**| `AI_BOOTSTRAP.md` | User must upload or point to this file | Strategic Planning |
+
+> [!TIP]
+> **Universal Prompt:** If your AI doesn't recognize the framework automatically, paste this:
+> *"I am using Godot Agent Framework (GAF). Please read the documentation in `godot-agent-framework/agents/` and assume the role of the best agent for my next request."*
+
+---
+
+## ⚙️ How it Works (AI Workflow)
+When you ask for a feature, the AI will:
+1. **Identify Role**: Accesses `agents/` to choose a specialist (e.g., `gameplay_programmer.md`).
+2. **Context Check**: Reads `docs/engine-reference/` to avoid Godot 3.x legacy code.
+3. **Execute via MCP**: Uses the `godot_mcp` addon tools to interact with your Scene Tree in real-time.
+4. **Handoff**: Generates a professional report in `docs/handoffs/`.
+
+---
+
+## 🚀 Quickstart
 1. Clone this repo inside your Godot project:
    `my_godot_game/godot-agent-framework/`
-2. Run GAF (auto-installs MCP if missing + runs validation, no backups created):
-   Windows: `.scripts\gaf.cmd C:\ruta\tu_proyecto`
-   macOS/Linux: `./scripts/gaf.sh /ruta/tu_proyecto`
-3. Read `docs/AI_GUIDE.md` and follow the workflow.
+2. Run GAF Setup (installs MCP + AI Rules):
+   - **Windows:** `.\scripts\setup_project.ps1 -ProjectRoot ..\ -InstallMCP`
+   - **macOS/Linux:** `./scripts/setup_project.sh ../ --install-mcp`
+3. Ask your AI to perform a task. It will automatically detect `.cursorrules` or `.clinerules`.
 
-## Installation (Drop-in)
-1. Clone/download inside your Godot project.
-2. (Optional) Install MCP with the scripts.
-3. Run validation and follow `docs/AI_GUIDE.md`.
+---
 
-## Automatic setup
-Windows:
-```powershell
-.\scripts\setup_project.ps1 -ProjectRoot C:\ruta\a\tu_proyecto -InstallMCP -RunValidation
-```
-
-macOS/Linux:
-```bash
-./scripts/setup_project.sh /ruta/a/tu_proyecto --install-mcp --validate
-```
-
-## Validation
-- Run `scripts/validate_project.*` to execute all checks.
-- Report generated at `docs/generated/validation-report.md`.
-
-## MCP (Addon)
-- Clean template at `tools/mcp/addon_template/`.
-- Quick install via `scripts/install_mcp.*`.
-- Godot recognizes the plugin when placed in `addons/godot_mcp`.
-
-## Recommended structure
+## 🏗️ Folder Structure
 ```
 my_godot_game/
-|-- project.godot
-|-- addons/
-|   `-- godot_mcp/
-|-- scenes/
-|-- scripts/
-|-- assets/
+|-- .cursorrules           <-- AI Brain (Root)
+|-- .clinerules            <-- AI Brain (Root)
+|-- .github/               <-- Copilot instructions
+|-- addons/godot_mcp/      <-- MCP Server (Plugin)
 `-- godot-agent-framework/
-    |-- agents/
-    |-- docs/
-    |-- tools/
-    |-- scripts/
-    `-- ...
+    |-- agents/            <-- Role-based Agent MDs
+    |-- docs/              <-- Engine Ref & Handoff templates
+    |-- tools/             <-- MCP Template & installers
+    `-- scripts/           <-- Validation & Setup scripts
 ```
 
-## Documentation
+## 🛠️ Validation
+Run `scripts/validate_project.*` to execute all checks. Report generated at `docs/generated/validation-report.md`.
+
+## 📜 Documentation
 - Docs index: `docs/README.md`
 - AI Guide: `docs/AI_GUIDE.md`
 - Engine Reference: `docs/engine-reference/godot/README.md`
-- Security: `docs/SECURITY.md`
 - Handoffs: `docs/handoffs/`
 
-## Credits
-- Modified MCP addon based on Coding-Solo/godot-mcp (MIT). See THIRD_PARTY_NOTICES.md.
-
-## References
-- Godot Engine: https://godotengine.org/
-- Godot Docs (stable): https://docs.godotengine.org/en/stable/
-- Godot GitHub: https://github.com/godotengine/godot
-- Godot Asset Library: https://godotengine.org/asset-library/
-
-## License
-MIT
-
-## FAQ
-See FAQ.md.
-
-## Security Policy
-See SECURITY.md.
+## ⚖️ License
+MIT. See THIRD_PARTY_NOTICES.md for MCP addon credits (based on Coding-Solo).

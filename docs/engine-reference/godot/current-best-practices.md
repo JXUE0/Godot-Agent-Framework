@@ -1,43 +1,44 @@
-﻿# Godot — Current Best Practices
-Last verified: 2026-02-12 | Engine: Godot 4.6
+# 🌟 GODOT 4.X — CURRENT BEST PRACTICES (GAF)
+> [!IMPORTANT]
+> **DEVELOPMENT STANDARD:** All agents MUST follow these patterns to ensure high-quality, maintainable code for Godot 4.3+.
 
-## GDScript (4.5+)
-- Variadics with `...`.
-- `@abstract` for abstract classes/methods.
-- Backtracing in release builds.
+## 💻 GDSCRIPT (STRICT MODE)
 
-## Physics (4.6)
-- Jolt is default 3D engine for new projects.
-- GodotPhysics3D remains available for compatibility.
-- Some props (e.g., `HingeJoint3D.damp`) only work with GodotPhysics3D.
+- **Static Typing:** Always use types for variables, functions, and arguments. 
+  `var speed: int = 100` | `func _move(dir: Vector2) -> void:`
+- **Annotations (@):** Use the new `@` system for all editor-related logic.
+  `@export`, `@onready`, `@tool`, `@rpc`.
+- **Node Access (Unique Names %):** Prefer **Unique Scene Names** over absolute paths.
+  `get_node("%PlayerIcon")` is safer than `get_node("UI/HB/PlayerIcon")`.
+- **Await/Signals:** Use the modern async system.
+  `await get_tree().create_timer(1).timeout`.
 
-## Rendering (4.6)
-- D3D12 default on Windows.
-- Glow before tonemapping.
-- AgX tonemapper with white point and contrast.
+## 🏗️ SYSTEM ARCHITECTURE (COMPOSITION)
 
-## Rendering (4.5)
-- Shader Baker for precompilation.
-- SMAA 1x AA.
-- Stencil buffer, bent normal/specular occlusion.
+- **Components over Inheritance:** Use child nodes as "Components" (e.g., `HealthComponent`, `HitboxComponent`). This makes systems decouplable and reusable.
+- **Resources (.tres):** Store data (stats, items, configs) in custom **Resources**. IAs should read/write `.tres` files for data-driven gameplay.
+- **Signals for Upward Communication:** 
+  - *Downward:* Call methods (Parent -> Child).
+  - *Upward:* Use Signals (Child -> Parent).
+  - *Lateral:* Avoid direct coupling; use an Event Bus or a "Manager" node.
 
-## Accessibility (4.5+)
-- Screen reader via AccessKit.
-- Live translation preview.
-- FoldableContainer and recursive control disable.
+## 🛠️ THE NEW 4.X PHYSICS & NAVIGATION
 
-## Animation (4.5+ / 4.6)
-- BoneConstraint3D modifiers.
-- IK restored via `SkeletonModifier3D`.
+- **CharacterBody2D/3D:** Use the built-in `move_and_slide()` pattern. 
+  *Rule:* Set `velocity` first, then call the method.
+- **Navigation Agents:** Use `NavigationAgent2D/3D` nodes instead of the old NavigationServer methods. Set the target position and react to the `velocity_computed` signal.
 
-## Resources (4.5+)
-- Use `duplicate_deep()` for deep copies.
+## 🎨 RENDERING & POST-PROCESS
 
-## Navigation (4.5+)
-- Dedicated NavigationServer2D.
+- **WorldEnvironment:** Centralize your lighting and fog settings in a single `.tres` environment resource.
+- **UI Responsiveness:** Always use **Containers** (Margin, Grid, VBox, HBox). Never position UI elements freely unless they are meant to be overlay popups.
+- **Shaders:** Favor `VisualShader` for simple effects and `ShaderMaterial` with `.gdshader` for complex logic. Use `StandardMaterial3D` for basic 3D assets.
 
-## UI (4.6)
-- Dual focus system (mouse/touch vs keyboard/gamepad).
+## 📂 PROJECT HYGIENE
 
-## Editor workflow (4.6)
-- Floating docks and shortcut updates.
+- **Naming:** `PascalCase` for ClassNames and `snake_case` for everything else (files, variables, methods).
+- **Cleanup:** Always use `.queue_free()` to remove nodes safely.
+- **Documentation:** Use `@doc` comments for any public-facing API you create.
+
+---
+*Verified for Godot 4.3/4.6 | Godot Agent Framework (GAF)*
