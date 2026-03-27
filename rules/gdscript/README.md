@@ -17,3 +17,4 @@ Reglas especificas para Godot/GDScript 4.x.
 - No abusar de autoloads.
 - Mantener escenas pequeñas y composables.
 \n\n## Editor y herramientas\n- Usar @tool en scripts que interactuan con el editor.\n- Preferir EditorScript para automatizacion en editor.\n\n## Senales\n- Usar signal.connect(callable) en lugar de strings.\n- Desconectar en _exit_tree() cuando aplique.\n
+\n\n## Seguridad @tool\n- Separar codigo editor vs runtime con Engine.is_editor_hint().\n- Evitar escribir en disco en _process() cuando es @tool.\n
