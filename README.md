@@ -1,6 +1,9 @@
 ﻿# Godot Agent Framework (GAF)
-**EN:** Drop‑in framework for Godot 4.x so AI can work like a professional studio team: clear roles, strict rules, real tooling, and MCP integration.  
-**ES:** Framework drop‑in para Godot 4.x para que la IA trabaje como un equipo profesional: roles claros, reglas estrictas, tooling real e integración MCP.
+
+Website: https://jxue0.github.io/Godot-Agent-Framework/
+
+**EN:** Drop-in framework for Godot 4.x so AI can work like a professional studio team: clear roles, strict rules, real tooling, and MCP integration.  
+**ES:** Framework drop-in para Godot 4.x para que la IA trabaje como un equipo profesional: roles claros, reglas estrictas, tooling real e integracion MCP.
 
 ## Highlights
 - Professional agent roles with strict rules and handoffs.
@@ -19,7 +22,7 @@
 3) Read docs/AI_GUIDE.md and follow the workflow.
 ```
 
-## Installation (Drop‑in)
+## Installation (Drop-in)
 1. Clone/download inside your Godot project.
 2. (Optional) Install MCP with the scripts.
 3. Run validation and follow `docs/AI_GUIDE.md`.
@@ -51,18 +54,18 @@ macOS/Linux:
 ## Recommended structure
 ```
 my_godot_game/
-├── project.godot
-├── addons/
-│   └── godot_mcp/
-├── scenes/
-├── scripts/
-├── assets/
-└── godot-agent-framework/
-    ├── agents/
-    ├── docs/
-    ├── tools/
-    ├── scripts/
-    └── ...
+|-- project.godot
+|-- addons/
+|   `-- godot_mcp/
+|-- scenes/
+|-- scripts/
+|-- assets/
+`-- godot-agent-framework/
+    |-- agents/
+    |-- docs/
+    |-- tools/
+    |-- scripts/
+    `-- ...
 ```
 
 ## Documentation
@@ -72,7 +75,11 @@ my_godot_game/
 - Security: `docs/SECURITY.md`
 - Handoffs: `docs/handoffs/`
 
+## References
+- Godot Engine: https://godotengine.org/
+- Godot Docs (stable): https://docs.godotengine.org/en/stable/
+- Godot GitHub: https://github.com/godotengine/godot
+- Godot Asset Library: https://godotengine.org/asset-library/
+
 ## License
 MIT
-
-\n\n## References\n- Godot Engine: https://godotengine.org/\n- Godot Docs: https://docs.godotengine.org/en/stable/\n- Godot GitHub: https://github.com/godotengine/godot\n
