@@ -1,0 +1,11 @@
+﻿# Ignore build and OS files
+.DS_Store
+Thumbs.db
+
+# Godot
+.godot/
+.import/
+export_presets.cfg
+
+# Logs
+*.log

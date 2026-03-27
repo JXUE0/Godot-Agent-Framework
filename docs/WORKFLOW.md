@@ -1,0 +1,18 @@
+﻿# WORKFLOW.md
+
+## Flujo recomendado
+1. Leer `AI_GUIDE.md`.
+2. Seleccionar rol en `agents/`.
+3. Revisar estado del proyecto.
+4. Proponer plan.
+5. Ejecutar tareas.
+6. Validar con herramientas.
+7. Documentar cambios.
+8. Notificar al Producer.
+
+## Checklist
+- [ ] Estructura respetada
+- [ ] Scripts validados
+- [ ] Assets validados
+- [ ] Documentación actualizada
+- [ ] QA informado
