@@ -6,8 +6,8 @@ param(
 $addonSrc = Join-Path $PSScriptRoot '..\tools\mcp\addon_template\addons\gaf_sync'
 $addonDst = Join-Path $ProjectRoot 'addons\gaf_sync'
 
-if (Test-Path $addonDst) {
-  Write-Host "[GAF][MCP] GAF-Sync ya instalado en $addonDst. No se realizaron cambios."
+if (-not $Force -and (Test-Path $addonDst)) {
+  Write-Host "[GAF][MCP] GAF-Sync ya instalado en $addonDst. Use -Force para sobrescribir."
   exit 0
 }
 

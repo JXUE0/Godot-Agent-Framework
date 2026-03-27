@@ -1,4 +1,8 @@
-# Godot Agent Framework (GAF) - V1.3.1 (Pure TCP)
+# Godot Agent Framework (GAF) - V1.4.0-WIP (Pure TCP)
+
+> **⚠️ WORK IN PROGRESS - DO NOT DOWNLOAD OR USE IN PRODUCTION ⚠️**
+> 
+> *This repository is currently undergoing a massive architectural rewrite to comply with the official MCP (Model Context Protocol) standard. The codebase is highly unstable, tools are partially implemented, and the API is subject to breaking changes. This message will be removed once V1.4.0 reaches stability.*
 
 The **Godot Agent Framework (GAF)** is a professional, high-performance, and secure ecosystem designed to empower AI Agents in autonomous game development. It establishes a robust bi-directional communication channel between AI models and the Godot Editor API, enabling real-time scene manipulation, script editing, and project lifecycle management.
 

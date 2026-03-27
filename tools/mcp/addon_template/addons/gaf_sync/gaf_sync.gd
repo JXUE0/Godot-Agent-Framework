@@ -1,6 +1,6 @@
 # gaf_sync.gd
 # 🏢 GODOT AGENT FRAMEWORK - SYNC ENGINE (GAF-SYNC) V1.0.0
-# Port: 1342 (WebSocket) | Protocol: GAF-V1
+# Port: 1342 (TCP) | Protocol: GAF-V1
 
 @tool
 extends EditorPlugin
@@ -26,6 +26,3 @@ func _exit_tree() -> void:
     
     print("GAF-Sync Engine: Shutdown. 💤")
 
-# Global access to EditorInterface for the AI commands
-func get_editor_interface() -> EditorInterface:
-    return get_editor_interface()
