@@ -2,36 +2,42 @@
 set -euo pipefail
 
 PROJECT_ROOT="${1:-}"
-INSTALL_MCP="${2:-}"
-FORCE_MCP="${3:-}"
-RUN_VALIDATION="${4:-}"
+INSTALL_MCP=false
+FORCE_MCP=false
+VALIDATE=false
 
-FRAMEWORK_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 if [[ -z "$PROJECT_ROOT" ]]; then
-  PROJECT_ROOT="$(cd "$FRAMEWORK_ROOT/.." && pwd)"
-fi
-
-PROJECT_FILE="$PROJECT_ROOT/project.godot"
-if [[ ! -f "$PROJECT_FILE" ]]; then
-  echo "[GAF][Setup] project.godot no encontrado en $PROJECT_ROOT."
-  echo "[GAF][Setup] Usa ./scripts/setup_project.sh /ruta/al/proyecto"
+  echo "[GAF][Setup] Usage: ./scripts/setup_project.sh /path/to/project --install-mcp --validate"
   exit 1
 fi
 
-echo "[GAF][Setup] Proyecto detectado: $PROJECT_ROOT"
+shift || true
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --install-mcp) INSTALL_MCP=true ;;
+    --force-mcp) FORCE_MCP=true ;;
+    --validate) VALIDATE=true ;;
+  esac
+  shift
+done
 
-if [[ "$INSTALL_MCP" == "--install-mcp" ]]; then
-  echo "[GAF][Setup] Instalando MCP..."
-  if [[ "$FORCE_MCP" == "--force-mcp" ]]; then
-    "$FRAMEWORK_ROOT/scripts/install_mcp.sh" "$PROJECT_ROOT" --force
+echo "[GAF][Setup] Project detected: $PROJECT_ROOT"
+
+if [[ ! -f "$PROJECT_ROOT/project.godot" ]]; then
+  echo "[GAF][Setup] WARNING: project.godot not found in $PROJECT_ROOT"
+fi
+
+if $INSTALL_MCP; then
+  echo "[GAF][Setup] Installing MCP..."
+  if $FORCE_MCP; then
+    bash "$(dirname "$0")/install_mcp.sh" "$PROJECT_ROOT" --force
   else
-    "$FRAMEWORK_ROOT/scripts/install_mcp.sh" "$PROJECT_ROOT"
+    bash "$(dirname "$0")/install_mcp.sh" "$PROJECT_ROOT"
   fi
 fi
 
-if [[ "$RUN_VALIDATION" == "--validate" ]]; then
-  echo "[GAF][Setup] Ejecutando validacion..."
-  "$FRAMEWORK_ROOT/scripts/validate_project.sh"
+if $VALIDATE; then
+  bash "$(dirname "$0")/validate_project.sh"
 fi
 
-echo "[GAF][Setup] Completado"
+echo "[GAF][Setup] Completed"

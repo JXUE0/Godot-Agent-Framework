@@ -1,36 +1,25 @@
 ﻿param(
-  [string]$ProjectRoot = "",
+  [Parameter(Mandatory=$true)][string]$ProjectRoot,
   [switch]$InstallMCP,
   [switch]$ForceMCP,
   [switch]$RunValidation
 )
 
-$frameworkRoot = Resolve-Path (Join-Path $PSScriptRoot '..')
-if ([string]::IsNullOrWhiteSpace($ProjectRoot)) {
-  $ProjectRoot = (Resolve-Path (Join-Path $frameworkRoot '..')).Path
-}
-
-$projectFile = Join-Path $ProjectRoot 'project.godot'
-if (-not (Test-Path $projectFile)) {
-  Write-Host "[GAF][Setup] project.godot no encontrado en $ProjectRoot."
-  Write-Host "[GAF][Setup] Usa -ProjectRoot para indicar un proyecto Godot valido."
-  exit 1
-}
-
 Write-Host "[GAF][Setup] Proyecto detectado: $ProjectRoot"
+
+if (-not (Test-Path (Join-Path $ProjectRoot 'project.godot'))) {
+  Write-Host "[GAF][Setup] WARNING: project.godot no encontrado en $ProjectRoot"
+}
 
 if ($InstallMCP) {
   Write-Host "[GAF][Setup] Instalando MCP..."
-  if ($ForceMCP) {
-    & (Join-Path $frameworkRoot 'scripts\install_mcp.ps1') -ProjectRoot $ProjectRoot -Force
-  } else {
-    & (Join-Path $frameworkRoot 'scripts\install_mcp.ps1') -ProjectRoot $ProjectRoot
-  }
+  $mcpArgs = @("-ProjectRoot", $ProjectRoot)
+  if ($ForceMCP) { $mcpArgs += "-Force" }
+  & (Join-Path $PSScriptRoot 'install_mcp.ps1') @mcpArgs
 }
 
 if ($RunValidation) {
-  Write-Host "[GAF][Setup] Ejecutando validacion..."
-  & (Join-Path $frameworkRoot 'scripts\validate_project.ps1')
+  & (Join-Path $PSScriptRoot 'validate_project.ps1')
 }
 
 Write-Host "[GAF][Setup] Completado"
