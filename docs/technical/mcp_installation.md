@@ -15,12 +15,7 @@ This guide provides step-by-step installation without screenshots.
 my_godot_game/godot-agent-framework/
 ```
 
-### 2) Install MCP (recommended)
-```powershell
-.\scripts\install_mcp.ps1 -ProjectRoot C:\ruta\a\tu_proyecto
-```
-
-### 3) If MCP already exists, force reinstall (backup created)
+### 2) Install MCP (recommended)\n`powershell\n.\\scripts\\install_mcp.cmd C:\\ruta\\a\\tu_proyecto\n`\n\n### 3) If MCP already exists, force reinstall (backup created)\n`powershell\n.\\scripts\\install_mcp.ps1 -ProjectRoot C:\\ruta\\a\\tu_proyecto -Force\n`\n\n If MCP already exists, force reinstall (backup created)
 ```powershell
 .\scripts\install_mcp.ps1 -ProjectRoot C:\ruta\a\tu_proyecto -Force
 ```
@@ -70,3 +65,4 @@ my_godot_game/godot-agent-framework/
 - The MCP addon must live in `addons/godot_mcp` for Godot to recognize it.
 - The installer copies from `tools/mcp/addon_template/`.
 - If validation fails, check `docs/generated/validation-report.md`.
+

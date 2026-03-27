@@ -10,17 +10,7 @@
 - Clean MCP template + installers.
 - Deterministic workflows and technical documentation.
 
-## Quickstart
-```text
-1) Clone this repo inside your Godot project:
-   my_godot_game/godot-agent-framework/
-2) Run setup (installs MCP + validates):
-   Windows: .\scripts\setup_project.ps1 -ProjectRoot C:\ruta\tu_proyecto -InstallMCP -RunValidation
-   macOS/Linux: ./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --validate
-3) Read docs/AI_GUIDE.md and follow the workflow.
-```
-
-## Installation (Drop-in)
+## Quickstart\n`	ext\n1) Clone this repo inside your Godot project:\n   my_godot_game/godot-agent-framework/\n2) Run setup (installs MCP + validates):\n   Windows: .\\scripts\\setup_project.cmd C:\\ruta\\tu_proyecto\n   macOS/Linux: ./scripts/setup_project.sh /ruta/tu_proyecto --install-mcp --validate\n3) Read docs/AI_GUIDE.md and follow the workflow.\n`\n\n## Installation (Drop-in)
 1. Clone/download inside your Godot project.
 2. (Optional) Install MCP with the scripts.
 3. Run validation and follow `docs/AI_GUIDE.md`.
@@ -83,3 +73,4 @@ my_godot_game/
 MIT
 
 \n\n## FAQ\nSee FAQ.md.\n\n\n## Security Policy\nSee SECURITY.md.\n
+
