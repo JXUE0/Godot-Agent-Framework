@@ -1,15 +1,14 @@
-﻿# Convenciones de Proyecto Godot
+﻿# Project Conventions
 
-## Estructura recomendada
+## Recommended structure
 - `scenes/`, `scripts/`, `assets/`, `addons/`.
-- `godot-agent-framework/` siempre en la raiz del proyecto.
+- `godot-agent-framework/` in project root.
 
 ## Naming
-- Archivos en `snake_case`.
-- Escenas en `PascalCase`.
-- Evitar espacios en nombres.
+- Files in `snake_case`.
+- Scenes in `PascalCase`.
 
 ## GDScript
-- Tipado estatico cuando aplique.
-- `@onready` para cachear nodos.
-- Evitar APIs deprecadas.
+- Use static typing when possible.
+- Use `@onready` to cache nodes.
+- Avoid deprecated APIs.

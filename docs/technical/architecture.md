@@ -1,28 +1,28 @@
-﻿# Arquitectura del Framework
+﻿# Framework Architecture
 
-## Objetivo
-GAF es un framework drop-in para proyectos Godot 4.x. Define roles, reglas, herramientas y flujos para que una IA pueda operar con calidad profesional sin romper la arquitectura del juego.
+## Purpose
+GAF is a drop‑in framework for Godot 4.x. It defines roles, rules, tools, and workflows so AI can operate professionally without breaking the game architecture.
 
-## Componentes principales
-- `agents/`: roles con reglas y entregables claros.
-- `docs/`: guias de uso, arquitectura, seguridad, engine reference y handoffs.
-- `tools/`: validadores, plantillas y utilidades.
-- `scripts/`: setup, instalacion MCP y validacion.
-- `rules/`: reglas comunes + GDScript.
-- `hooks/`: perfiles de control (minimal/standard/strict).
+## Core components
+- `agents/`: roles with rules and deliverables.
+- `docs/`: guides, architecture, security, engine reference, handoffs.
+- `tools/`: validators, templates, utilities.
+- `scripts/`: setup, MCP install, validation.
+- `rules/`: common + GDScript rules.
+- `hooks/`: control profiles (minimal/standard/strict).
 
-## Limites del framework
-- No modifica el juego por defecto.
-- No instala addons sin confirmacion.
-- No reemplaza decisiones de arquitectura del Lead Engineer.
+## Framework boundaries
+- Does not modify the game by default.
+- Does not install addons without confirmation.
+- Does not override Lead Engineer decisions.
 
-## Flujo macro
-1. IA lee `docs/AI_GUIDE.md` y engine reference.
-2. Selecciona rol en `agents/`.
-3. Ejecuta tareas con validacion.
-4. Documenta y hace handoff.
+## Macro flow
+1. AI reads `docs/AI_GUIDE.md` and engine reference.
+2. Selects a role in `agents/`.
+3. Executes tasks with validation.
+4. Documents and hands off.
 
-## Politicas de seguridad
-- Solo local por defecto.
-- MCP sin conexiones remotas salvo aprobacion.
-- Evitar APIs deprecadas.
+## Security policy
+- Local only by default.
+- MCP without remote connections unless approved.
+- Avoid deprecated APIs.

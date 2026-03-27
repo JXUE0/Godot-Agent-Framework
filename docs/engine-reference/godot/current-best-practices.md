@@ -1,53 +1,43 @@
 ﻿# Godot — Current Best Practices
-Last verified: 2026-02-12
-Engine: Godot 4.6
-
-Practicas nuevas o cambiadas desde ~4.3. Esto complementa el conocimiento general del modelo.
+Last verified: 2026-02-12 | Engine: Godot 4.6
 
 ## GDScript (4.5+)
-- Variadicos con `...`.
-- `@abstract` para clases/metodos abstractos.
-- Backtracing disponible incluso en builds Release.
+- Variadics with `...`.
+- `@abstract` for abstract classes/methods.
+- Backtracing in release builds.
 
 ## Physics (4.6)
-- Jolt es el motor 3D por defecto en proyectos nuevos.
-- GodotPhysics3D sigue disponible para compatibilidad.
-- Algunas props (ej. `HingeJoint3D.damp`) solo funcionan en GodotPhysics3D.
+- Jolt is default 3D engine for new projects.
+- GodotPhysics3D remains available for compatibility.
+- Some props (e.g., `HingeJoint3D.damp`) only work with GodotPhysics3D.
 
 ## Rendering (4.6)
-- D3D12 por defecto en Windows.
-- Glow antes del tonemapping.
-- SSR mejorado.
-- AgX tonemapper con white point y contrast.
+- D3D12 default on Windows.
+- Glow before tonemapping.
+- AgX tonemapper with white point and contrast.
 
 ## Rendering (4.5)
-- Shader Baker para precompilar shaders.
-- SMAA 1x como AA.
-- Stencil buffer y mejoras en materiales (bent normal/specular occlusion).
+- Shader Baker for precompilation.
+- SMAA 1x AA.
+- Stencil buffer, bent normal/specular occlusion.
 
 ## Accessibility (4.5+)
-- Soporte de screen reader via AccessKit.
-- Live translation preview en editor.
-- FoldableContainer y recursive control disable.
+- Screen reader via AccessKit.
+- Live translation preview.
+- FoldableContainer and recursive control disable.
 
 ## Animation (4.5+ / 4.6)
-- BoneConstraint3D con modifiers (Aim/Copy/ConvertTransform).
-- IK restaurado via `SkeletonModifier3D`.
+- BoneConstraint3D modifiers.
+- IK restored via `SkeletonModifier3D`.
 
 ## Resources (4.5+)
-- Usar `duplicate_deep()` para copias profundas de recursos anidados.
+- Use `duplicate_deep()` for deep copies.
 
 ## Navigation (4.5+)
-- NavigationServer2D dedicado (no proxy de 3D).
+- Dedicated NavigationServer2D.
 
 ## UI (4.6)
-- Dual-focus (mouse/touch separado de teclado/gamepad).
+- Dual focus system (mouse/touch vs keyboard/gamepad).
 
-## Editor Workflow (4.6)
-- Docks flotantes, shortcuts nuevos y mejoras en Quick Open.
-
-## Platform (4.5+)
-- visionOS export.
-- SDL3 para gamepads.
-- Android: edge-to-edge, camera feed, 16KB pages.
-- Linux: Wayland subwindow.
+## Editor workflow (4.6)
+- Floating docks and shortcut updates.

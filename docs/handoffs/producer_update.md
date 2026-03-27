@@ -1,12 +1,12 @@
 ﻿# Handoff — Producer Update
 
-## Estado
-- Progreso:
-- Bloqueos:
-- Riesgos:
+## Status
+- Progress:
+- Blockers:
+- Risks:
 
-## Siguiente paso
+## Next step
 - 
 
-## Fecha
+## Date
 - 

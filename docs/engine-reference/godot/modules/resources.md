@@ -1,11 +1,11 @@
 ﻿# Godot Resources — Quick Reference
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
-## Cambios desde ~4.3
-- `duplicate_deep()` para copias profundas (4.5).
+## Changes
+- `duplicate_deep()` for deep copies (4.5).
 
-## Patrones actuales
-- Usar resources para configuraciones de datos.
+## Patterns
+- Use resources for data configuration.
 
-## Errores comunes
-- Usar `duplicate()` en recursos anidados.
+## Common pitfalls
+- Using `duplicate()` on nested resources.

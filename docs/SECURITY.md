@@ -1,23 +1,21 @@
 ﻿# SECURITY — Godot Agent Framework
 
-Este documento define el modelo de seguridad para agentes trabajando en Godot.
+## Key risks
+- Prompt injection via docs/external files.
+- Tool poisoning (untrusted tools).
+- MCP with excessive permissions.
 
-## Riesgos principales
-- Prompt injection via docs/archivos externos.
-- Tool poisoning (herramientas maliciosas o no confiables).
-- MCP con permisos excesivos.
-
-## Reglas obligatorias
-- No abrir conexiones remotas sin aprobacion.
-- No ejecutar scripts externos descargados.
-- Validar origen de tools y addons.
-- No exponer secretos en logs.
+## Mandatory rules
+- No remote connections without approval.
+- Do not execute downloaded scripts.
+- Validate tool/addon origins.
+- Do not expose secrets in logs.
 
 ## MCP
-- Mantener `allow_remote_connections = false`.
-- Usar auth token si esta disponible.
-- No habilitar comandos inseguros.
+- Keep `allow_remote_connections = false`.
+- Use auth token if available.
+- Do not enable unsafe commands.
 
-## Verificaciones minimas
-- Revisión de archivos antes de aplicar cambios masivos.
-- Validar uso de APIs deprecadas.
+## Minimum checks
+- Review files before applying mass changes.
+- Validate deprecated API usage.

@@ -1,20 +1,30 @@
 ﻿# Rules — GDScript
 
-Reglas especificas para Godot/GDScript 4.x.
+Godot/GDScript rules for GAF.
 
-## Convenciones
-- Tipado estatico cuando aplique.
-- `@onready` para cachear nodos.
-- Señales con `signal.connect(callable)` (no strings).
+## Conventions
+- Prefer static typing when possible.
+- Use `@onready` to cache nodes.
+- Use `signal.connect(callable)` (no string connections).
 
-## Prohibido
-- `yield()` (usar `await`).
-- `instance()` (usar `instantiate()`).
-- `TileMap` (usar `TileMapLayer`).
+## Forbidden
+- `yield()` (use `await`).
+- `instance()` (use `instantiate()`).
+- `TileMap` (use `TileMapLayer`).
 
-## Buenas practicas
-- Evitar `$NodePath` en `_process()`.
-- No abusar de autoloads.
-- Mantener escenas pequeñas y composables.
-\n\n## Editor y herramientas\n- Usar @tool en scripts que interactuan con el editor.\n- Preferir EditorScript para automatizacion en editor.\n\n## Senales\n- Usar signal.connect(callable) en lugar de strings.\n- Desconectar en _exit_tree() cuando aplique.\n
-\n\n## Seguridad @tool\n- Separar codigo editor vs runtime con Engine.is_editor_hint().\n- Evitar escribir en disco en _process() cuando es @tool.\n
+## Best practices
+- Avoid `$NodePath` in `_process()`.
+- Avoid overusing autoloads.
+- Keep scenes small and composable.
+
+## Editor & tools
+- Use `@tool` for editor‑time scripts.
+- Prefer `EditorScript` for editor automation.
+
+## Signals
+- Use `signal.connect(callable)` instead of strings.
+- Disconnect in `_exit_tree()` when applicable.
+
+## @tool safety
+- Separate editor/runtime logic using `Engine.is_editor_hint()`.
+- Avoid disk writes in `_process()` when using `@tool`.

@@ -1,15 +1,15 @@
 ﻿# Godot Rendering — Quick Reference
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
-## Cambios desde ~4.3
-- 4.6: D3D12 default en Windows, glow antes del tonemapping, AgX, SSR mejorado.
+## Changes
+- 4.6: D3D12 default on Windows, glow before tonemapping, AgX, SSR.
 - 4.5: Shader Baker, SMAA, stencil buffer.
-- 4.4: `Texture2D` → `Texture` en shaders.
+- 4.4: `Texture2D` → `Texture` in shaders.
 
-## Patrones actuales
-- Usar `Compositor` para post-proceso.
-- Elegir AA segun plataforma (SMAA/FXAA/TAA).
+## Pattern
+- Use `Compositor` for post‑processing.
+- Choose AA per platform (SMAA/FXAA/TAA).
 
-## Errores comunes
-- Asumir Vulkan default en Windows.
-- Usar `Texture2D` en uniformes de shader.
+## Common pitfalls
+- Assuming Vulkan default on Windows.
+- Using `Texture2D` in shader uniforms.

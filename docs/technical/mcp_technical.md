@@ -1,24 +1,24 @@
-﻿# MCP — Guia Tecnica
+﻿# MCP — Technical Guide
 
-## Que es
-El addon MCP expone herramientas del editor Godot via WebSocket local. Permite inspeccionar y modificar el proyecto desde una IA.
+## What it is
+The MCP addon exposes Godot editor tools via a local WebSocket, enabling AI to inspect and modify projects safely.
 
-## Flujo
-1. Godot ejecuta el servidor MCP en el editor.
-2. La IA se conecta via WebSocket.
-3. El plugin ejecuta herramientas y devuelve resultados.
+## Flow
+1. Godot runs the MCP server in the editor.
+2. AI connects via WebSocket.
+3. The plugin executes tools and returns results.
 
-## Puerto y seguridad
-- Puerto default: 9081.
-- No habilitar conexiones remotas sin aprobacion.
-- Deshabilitar comandos inseguros salvo necesidad.
+## Port & security
+- Default port: 9081.
+- Do not enable remote connections without approval.
+- Keep unsafe commands disabled unless needed.
 
-## Instalacion rapida
-- `scripts/install_mcp.*` copia el addon limpio a `addons/godot_mcp`.
-- Activar el plugin en Godot: Project > Project Settings > Plugins.
+## Quick install
+- `scripts/install_mcp.*` copies the clean addon to `addons/godot_mcp`.
+- Enable the plugin in Godot: Project > Project Settings > Plugins.
 
-## Validacion MCP
-`tools/mcp/validate_mcp.*` verifica:
-- Presencia de addon
-- plugin.cfg y plugin.gd
-- seguridad basica
+## MCP validation
+`tools/mcp/validate_mcp.*` checks:
+- addon presence
+- plugin.cfg and plugin.gd
+- basic security flags

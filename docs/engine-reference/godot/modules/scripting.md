@@ -1,15 +1,15 @@
 ﻿# Godot Scripting — Quick Reference
 Last verified: 2026-02-12 | Engine: Godot 4.6
 
-## Cambios desde ~4.3
-- Variadicos con `...` (4.5).
+## Changes
+- Variadics with `...` (4.5).
 - `@abstract` (4.5).
-- Backtracing en release (4.5).
+- Backtracing in release (4.5).
 
-## Patrones actuales
-- Tipado en GDScript.
-- Usar `await` en lugar de `yield()`.
+## Patterns
+- Use static typing.
+- Use `await` instead of `yield()`.
 
-## Errores comunes
-- Usar connect con strings.
-- Uso excesivo de `_process` con lookups.
+## Common pitfalls
+- String connect.
+- Heavy `_process` with lookups.

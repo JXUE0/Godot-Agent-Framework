@@ -1,11 +1,33 @@
 ﻿# PROJECT_STRUCTURE.md
 
-## Convención base
-El framework vive dentro del proyecto Godot como:
+## Base convention
+The framework lives inside the Godot project as:
 `my_game/godot-agent-framework/`
 
-## Reglas
-- No alterar carpetas del juego sin aprobación.
-- Mantener herramientas y docs dentro de `godot-agent-framework/`.
-- Las escenas del juego se mantienen fuera del framework.
-\n\n## Estructura recomendada (MCP)\n\n`\nmy_godot_game/\n├── project.godot\n├── addons/\n│   └── godot_mcp/\n├── scenes/\n├── scripts/\n├── assets/\n└── godot-agent-framework/\n    ├── agents/\n    ├── docs/\n    ├── tools/\n    │   └── mcp/\n    │       └── addon_template/\n    ├── scripts/\n    └── ...\n`\n\nNotas:\n- ddons/godot_mcp es obligatorio para que Godot reconozca el plugin.\n- godot-agent-framework/ es el framework drop-in con herramientas y docs.\n
+## Rules
+- Do not alter game folders without approval.
+- Keep tools and docs inside `godot-agent-framework/`.
+- Game scenes remain outside the framework.
+
+## Recommended structure (MCP)
+```
+my_godot_game/
+├── project.godot
+├── addons/
+│   └── godot_mcp/
+├── scenes/
+├── scripts/
+├── assets/
+└── godot-agent-framework/
+    ├── agents/
+    ├── docs/
+    ├── tools/
+    │   └── mcp/
+    │       └── addon_template/
+    ├── scripts/
+    └── ...
+```
+
+Notes:
+- `addons/godot_mcp` is required for Godot to recognize the plugin.
+- `godot-agent-framework/` is the drop‑in framework with tools and docs.

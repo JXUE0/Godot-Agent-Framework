@@ -1,69 +1,56 @@
 ﻿# Godot — Breaking Changes
 Last verified: 2026-02-12
 
-Cambios entre versiones, enfocado en cambios post-cutoff (4.4+).
-
-## 4.5 → 4.6 (Jan 2026 — POST-CUTOFF, HIGH RISK)
+## 4.5 → 4.6 (Jan 2026 — HIGH)
 
 | Subsystem | Change | Details |
 |---|---|---|
-| Physics | Jolt es el motor 3D por defecto | Nuevos proyectos usan Jolt automaticamente. Proyectos existentes conservan su configuracion. Algunas props como `HingeJoint3D.damp` solo funcionan con GodotPhysics3D. |
-| Rendering | Glow ahora procesa ANTES del tonemapping | El look de escenas con glow puede cambiar. Ajustar en WorldEnvironment. |
-| Rendering | D3D12 por defecto en Windows | Antes era Vulkan. Mejor compatibilidad con drivers. |
-| Rendering | AgX tonemapper con nuevos controles | Se agregan white point y contrast. |
-| Core | Quaternions inicializan a identidad | Antes era cero; impacto bajo pero tecnicamente breaking. |
-| UI | Sistema de doble focus | Mouse/touch separado de teclado/gamepad. Feedback visual distinto. |
-| Animation | IK restaurado | CCDIK, FABRIK, Jacobian, Spline IK, TwoBoneIK via `SkeletonModifier3D`. |
-| Editor | Tema “Modern” por defecto | Grayscale en lugar de azul. Se puede volver a Classic. |
-| Editor | Nuevo “Select Mode” | Tecla `v` para seleccionar; `q` ahora es Transform Mode. |
-| 2D | TileMapLayer rota scene tiles | Los scene tiles ahora pueden rotarse como atlas tiles. |
-| Localization | CSV con plurales | Ya no requiere Gettext para plurales. |
-| C# | Extraccion automatica de strings | Strings de traduccion se extraen desde C# automaticamente. |
-| Plugins | Nuevo EditorDock | Contenedor especializado para docks de plugins. |
+| Physics | Jolt is default 3D engine | New projects use Jolt by default. Existing projects keep config. Some props (e.g., `HingeJoint3D.damp`) only work with GodotPhysics3D. |
+| Rendering | Glow before tonemapping | Scene look may change. Adjust WorldEnvironment. |
+| Rendering | D3D12 default on Windows | Previously Vulkan. Better driver compatibility. |
+| Rendering | AgX tonemapper controls | Added white point and contrast. |
+| Core | Quaternions initialize to identity | Previously zero. Minor but breaking. |
+| UI | Dual focus system | Mouse/touch separate from keyboard/gamepad. |
+| Animation | IK restored | CCDIK, FABRIK, Jacobian, Spline IK, TwoBoneIK via `SkeletonModifier3D`. |
+| Editor | “Modern” theme default | Grayscale instead of blue. |
+| Editor | New Select Mode | `v` selects, `q` is Transform Mode. |
+| 2D | TileMapLayer rotates scene tiles | Scene tiles rotate like atlas tiles. |
+| Localization | CSV plurals | No longer requires Gettext for plurals. |
+| C# | Auto string extraction | Translation strings extracted automatically. |
+| Plugins | New EditorDock | Specialized dock container. |
 
-## 4.4 → 4.5 (Late 2025 — POST-CUTOFF, HIGH RISK)
-
-| Subsystem | Change | Details |
-|---|---|---|
-| GDScript | Variadicos (`...`) | Funciones pueden recibir parametros arbitrarios. |
-| GDScript | `@abstract` | Clases/metodos abstractos con enforcement. |
-| GDScript | Backtracing en release | Call stacks detallados disponibles. |
-| Rendering | Stencil buffer | Para masking/portales. |
-| Rendering | SMAA 1x | Nueva opcion AA. |
-| Rendering | Shader Baker | Precompilacion de shaders. |
-| Rendering | Bent normal / specular occlusion | Nuevas features de materiales. |
-| Accessibility | Screen reader | Integracion con AccessKit. |
-| Editor | Live translation preview | Previsualizacion en distintos idiomas. |
-| Physics | Interpolacion 3D re-arquitectada | Ahora en SceneTree; API estable. |
-| Animation | BoneConstraint3D y nuevos modifiers | Aim/Copy/ConvertTransform. |
-| Resources | `duplicate_deep()` | Copia profunda explicita. |
-| Navigation | Server 2D dedicado | Ya no proxy del 3D. |
-| UI | FoldableContainer | Contenedor tipo acordeon. |
-| UI | Recursive Control disable | Deshabilita input en jerarquias completas. |
-| Platform | visionOS export | Nuevo target. |
-| Platform | SDL3 gamepad | Mejor soporte multiplataforma. |
-| Platform | Android 16KB page | Requerido para Android 15+. |
-
-## 4.3 → 4.4 (Mid 2025 — NEAR CUTOFF, VERIFY)
+## 4.4 → 4.5 (Late 2025 — HIGH)
 
 | Subsystem | Change | Details |
 |---|---|---|
-| Core | `FileAccess.store_*` devuelve `bool` | Antes `void`. |
-| Core | `OS.execute_with_pipe` agrega `blocking` | Nuevo parametro opcional. |
-| Core | `RegEx.compile/create_from_string` agrega `show_error` | Nuevo parametro opcional. |
-| Rendering | `RenderingDevice.draw_list_begin` | Parametros removidos y `breadcrumb` agregado. |
-| Rendering | Tipos de texturas en shader | `Texture2D` cambia a `Texture`. |
-| Particles | `.restart()` agrega `keep_seed` | Parametro opcional. |
-| GUI | `RichTextLabel.push_meta` agrega `tooltip` | Parametro opcional. |
-| GUI | `GraphEdit.connect_node` agrega `keep_alive` | Parametro opcional. |
+| GDScript | Variadics (`...`) | Functions accept arbitrary params. |
+| GDScript | `@abstract` | Abstract classes/methods with enforcement. |
+| GDScript | Backtracing in release | Detailed call stacks in release builds. |
+| Rendering | Stencil buffer | Used for masking/portals. |
+| Rendering | SMAA 1x | New AA option. |
+| Rendering | Shader Baker | Shader precompilation. |
+| Rendering | Bent normal / specular occlusion | Material features. |
+| Accessibility | Screen reader | AccessKit integration. |
+| Editor | Live translation preview | Preview translations in editor. |
+| Physics | 3D interpolation re-architected | Now in SceneTree; API stable. |
+| Animation | BoneConstraint3D + modifiers | Aim/Copy/ConvertTransform. |
+| Resources | `duplicate_deep()` | Explicit deep copy. |
+| Navigation | Dedicated NavigationServer2D | No longer 3D proxy. |
+| UI | FoldableContainer | Accordion container. |
+| UI | Recursive Control disable | Disable input across hierarchy. |
+| Platform | visionOS export | New target. |
+| Platform | SDL3 gamepad | Better cross‑platform support. |
+| Platform | Android 16KB page | Required for Android 15+. |
 
-## 4.2 → 4.3 (In Training Data — LOW RISK)
+## 4.3 → 4.4 (NEAR CUTOFF)
 
 | Subsystem | Change | Details |
 |---|---|---|
-| Animation | `Skeleton3D.add_bone` retorna `int32` | Antes `void`. |
-| Animation | `bone_pose_updated` → `skeleton_updated` | Renombrado. |
-| TileMap | `TileMapLayer` reemplaza `TileMap` | Un nodo por layer. |
-| Navigation | `NavigationRegion2D` | Remueve `avoidance_layers`, `constrain_avoidance`. |
-| Editor | `EditorSceneFormatImporterFBX` renombrado | Ahora `EditorSceneFormatImporterFBX2GLTF`. |
-| Animation | AnimationMixer base class | AnimationPlayer/Tree extienden AnimationMixer. |
+| Core | `FileAccess.store_*` returns `bool` | Previously `void`. |
+| Core | `OS.execute_with_pipe` adds `blocking` | Optional param. |
+| Core | `RegEx.compile/create_from_string` adds `show_error` | Optional param. |
+| Rendering | `RenderingDevice.draw_list_begin` | Params removed + `breadcrumb` added. |
+| Rendering | Shader texture types | `Texture2D` → `Texture`. |
+| Particles | `.restart()` adds `keep_seed` | Optional param. |
+| GUI | `RichTextLabel.push_meta` adds `tooltip` | Optional param. |
+| GUI | `GraphEdit.connect_node` adds `keep_alive` | Optional param. |

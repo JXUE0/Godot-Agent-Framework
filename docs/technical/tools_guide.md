@@ -1,15 +1,15 @@
-﻿# Guia Tecnica de Herramientas
+﻿# Tools Technical Guide
 
-## Validadores
-- `asset_validator`: nombres, temporales, archivos pesados.
-- `structure_enforcer`: estructura base, scene templates, carpetas recomendadas.
-- `deprecated_apis`: detecta APIs obsoletas en .gd.
-- `mcp validator`: comprueba instalacion MCP.
+## Validators
+- `asset_validator`: names, temp files, heavy sources.
+- `structure_enforcer`: base structure, scene templates, recommended folders.
+- `deprecated_apis`: detects obsolete APIs in .gd.
+- `mcp validator`: verifies MCP installation.
 
-## Reportes
-- `docs_generator` genera `docs/generated/validation-report.md`.
+## Reports
+- `docs_generator` generates `docs/generated/validation-report.md`.
 
 ## Scripts
-- `scripts/validate_project.*` ejecuta todos los validadores.
-- `scripts/install_mcp.*` instala MCP.
-- `scripts/setup_project.*` orquesta instalacion + validacion.
+- `scripts/validate_project.*` runs all validators.
+- `scripts/install_mcp.*` installs MCP.
+- `scripts/setup_project.*` orchestrates install + validation.

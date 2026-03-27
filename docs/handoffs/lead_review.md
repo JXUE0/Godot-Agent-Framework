@@ -1,17 +1,17 @@
 ﻿# Handoff — Lead Engineer Review
 
-## Resumen
-- Cambios propuestos:
-- Afecta arquitectura: (si/no)
+## Summary
+- Proposed changes:
+- Architecture impact: (yes/no)
 
-## Impacto
-- Carpetas afectadas:
-- Escenas afectadas:
-- Scripts afectados:
+## Impact
+- Affected folders:
+- Affected scenes:
+- Affected scripts:
 
-## Decisiones
-- Aprobado: (si/no)
-- Cambios requeridos:
+## Decisions
+- Approved: (yes/no)
+- Required changes:
 
-## Notas
+## Notes
 - 

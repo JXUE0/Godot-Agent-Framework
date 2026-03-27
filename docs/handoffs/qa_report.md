@@ -1,20 +1,20 @@
 ﻿# Handoff — QA Report
 
-## Resumen
-- Cambios evaluados:
-- Estado general: (aprobado / bloqueado / requiere cambios)
+## Summary
+- Changes reviewed:
+- Overall status: (approved / blocked / needs changes)
 
-## Validaciones ejecutadas
+## Validations run
 - [ ] scripts/validate_project.*
-- [ ] Validacion MCP
-- [ ] Revisiones manuales
+- [ ] MCP validation
+- [ ] Manual checks
 
-## Hallazgos
-- Errores:
+## Findings
+- Errors:
 - Warnings:
 
-## Riesgos
+## Risks
 - 
 
-## Recomendacion QA
+## QA Recommendation
 - 

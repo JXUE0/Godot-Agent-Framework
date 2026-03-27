@@ -1,20 +1,29 @@
 ﻿# WORKFLOW.md
 
-## Flujo recomendado
-1. Leer `AI_GUIDE.md`.
-2. Seleccionar rol en `agents/`.
-3. Revisar estado del proyecto.
-4. Proponer plan.
-5. Ejecutar tareas.
-6. Validar con herramientas.
-7. Documentar cambios.
-8. Notificar al Producer.
+## Recommended flow
+1. Read `AI_GUIDE.md`.
+2. Select a role in `agents/`.
+3. Review project state.
+4. Propose a plan.
+5. Execute tasks.
+6. Validate with tools.
+7. Document changes.
+8. Notify Producer.
 
 ## Checklist
-- [ ] Estructura respetada
-- [ ] Scripts validados
-- [ ] Assets validados
-- [ ] Documentación actualizada
-- [ ] QA informado
-\n\n## Handoffs\n- QA: docs/handoffs/qa_report.md\n- Lead Engineer: docs/handoffs/lead_review.md\n- Producer: docs/handoffs/producer_update.md\n
-\n\n## Orquestacion multi-agente\n- Percepcion: leer estado actual del proyecto.\n- Razonamiento: plan de cambios.\n- Accion: ejecutar modificaciones.\n- Interaccion: coordinar con otros agentes.\n
+- [ ] Structure respected
+- [ ] Scripts validated
+- [ ] Assets validated
+- [ ] Documentation updated
+- [ ] QA informed
+
+## Handoffs
+- QA: docs/handoffs/qa_report.md
+- Lead Engineer: docs/handoffs/lead_review.md
+- Producer: docs/handoffs/producer_update.md
+
+## Multi-agent orchestration
+- Perception: read current project state.
+- Reasoning: plan changes.
+- Action: execute modifications.
+- Interaction: coordinate with other agents.

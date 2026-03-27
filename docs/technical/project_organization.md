@@ -1,12 +1,12 @@
-﻿# Organizacion de Proyecto (Godot)
+﻿# Project Organization (Godot)
 
-## Principios (basado en docs oficiales)
-- Separar contenido del motor y del proyecto.
-- Evitar carpetas gigantes con miles de archivos.
-- Usar `.gdignore` cuando una carpeta no debe importarse.
+## Principles (official docs)
+- Separate engine and project content.
+- Avoid giant folders with thousands of files.
+- Use `.gdignore` to exclude folders from import.
 
-## Estructuras comunes
-### Por feature (recomendado en proyectos grandes)
+## Common structures
+### By feature (recommended for large projects)
 ```
 res://
   player/
@@ -19,7 +19,7 @@ res://
     enemy.png
 ```
 
-### Por tipo (proyectos pequenos)
+### By type (small projects)
 ```
 res://
   scenes/
@@ -27,10 +27,10 @@ res://
   textures/
 ```
 
-## Reglas de naming
-- Archivos en `snake_case`.
-- Escenas en `PascalCase`.
+## Naming rules
+- Files in `snake_case`.
+- Scenes in `PascalCase`.
 
-## Uso de .gdignore
-- Colocar `.gdignore` en carpetas de build o assets temporales.
-- Ejemplo: `build/` o `temp/`.
+## Using .gdignore
+- Place `.gdignore` in build/temp folders.
+- Example: `build/` or `temp/`.

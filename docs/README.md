@@ -7,7 +7,17 @@
 - Security: docs/SECURITY.md
 - Engine Reference: docs/engine-reference/godot/README.md
 - Handoff Templates: docs/handoffs/
-\n- Technical Docs: docs/technical/\n
-- TSCN Format: docs/technical/tscn_format.md\n- QA Pipeline: docs/technical/qa_pipeline.md\n
-- Project Organization: docs/technical/project_organization.md\n
-- CI GUT (GitHub Actions): docs/technical/ci_gut_github_actions.md\n
+- Technical Docs: docs/technical/
+- TSCN Format: docs/technical/tscn_format.md
+- QA Pipeline: docs/technical/qa_pipeline.md
+- CI GUT (GitHub Actions): docs/technical/ci_gut_github_actions.md
+- Project Organization: docs/technical/project_organization.md
+
+## Español
+- docs/es/AI_GUIDE.md
+- docs/es/WORKFLOW.md
+- docs/es/PROJECT_STRUCTURE.md
+- docs/es/GODOT_BEST_PRACTICES.md
+- docs/es/SECURITY.md
+- docs/es/HOW_TO_USE_AGENTS.md
+- docs/es/README.md

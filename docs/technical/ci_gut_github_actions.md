@@ -1,6 +1,6 @@
-﻿# CI con GUT (GitHub Actions)
+﻿# CI with GUT (GitHub Actions)
 
-Ejemplo basico para ejecutar GUT en headless.
+Basic example to run GUT in headless mode.
 
 ```yaml
 name: godot-gut
@@ -31,6 +31,6 @@ jobs:
           ./godot --headless --path . -s res://addons/gut/gut_cmdln.gd -gexit
 ```
 
-Notas:
-- Ajusta la version de Godot a la usada por tu proyecto.
-- Requiere tener GUT instalado en `addons/gut`.
+Notes:
+- Adjust the Godot version to your project.
+- Requires GUT installed in `addons/gut`.

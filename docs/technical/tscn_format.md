@@ -1,21 +1,19 @@
-﻿# Formato TSCN — Referencia Basica
+﻿# TSCN Format — Basic Reference
 
-Este documento describe la estructura minima del formato TSCN para edicion segura.
-
-## Secciones clave
-1. **Encabezado**
+## Key sections
+1. **Header**
    - `[gd_scene load_steps=... format=3]`
-2. **Recursos externos**
+2. **External resources**
    - `[ext_resource type="..." path="res://..." id="..." uid="..."]`
-3. **Recursos internos**
+3. **Internal resources**
    - `[sub_resource type="..." id="..."]`
-4. **Nodos**
+4. **Nodes**
    - `[node name="..." type="..." parent="..."]`
-5. **Conexiones**
+5. **Connections**
    - `[connection signal="..." from="..." to="..." method="..."]`
 
-## Reglas de edicion segura
-- No modificar UIDs sin necesidad.
-- Mantener el orden de recursos si es posible.
-- Usar rutas `res://` validas.
-- Validar la escena al finalizar.
+## Safe editing rules
+- Do not modify UIDs unless needed.
+- Keep resource order when possible.
+- Use valid `res://` paths.
+- Validate the scene afterwards.

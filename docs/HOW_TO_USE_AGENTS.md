@@ -1,6 +1,6 @@
 ﻿# HOW_TO_USE_AGENTS.md
 
-1. Elige un rol en `agents/`.
-2. Lee las reglas del rol.
-3. Ejecuta tareas con validación.
-4. Reporta resultados al Producer.
+1. Choose a role in `agents/`.
+2. Read the role rules.
+3. Execute tasks with validation.
+4. Report results to the Producer.
