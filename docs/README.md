@@ -21,3 +21,4 @@
 - docs/es/SECURITY.md
 - docs/es/HOW_TO_USE_AGENTS.md
 - docs/es/README.md
+- MCP Installation: docs/technical/mcp_installation.md\n
