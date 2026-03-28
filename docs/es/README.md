@@ -21,10 +21,18 @@ Si eres un humano configurando esto por primera vez:
 ---
 
 ## 💡 Consejos Pro para Programación con IA
-- **El Deshacer es tu amigo:** Todos los cambios de escena de la IA soportan `Ctrl+Z`. ¡No tengas miedo de dejar que la IA experimente!
-- **Haz commit seguido:** Siempre haz `git commit` antes de pedir un "Refactorizado" masivo.
-- **Habla con los Especialistas:** Usa frases como *"Lead Engineer, optimiza este script"* o *"Technical Artist, arregla los anclajes de la UI"*. Seguirán sus protocolos específicos.
-- **Cero NPM:** No necesitas `npm install`. El bridge funciona con Node.js 100% nativo.
+
+> [!TIP]
+> **⌘ La Red de Seguridad `Undo`:** Todas las acciones de IA que modifican el SceneTree están envueltas en operaciones nativas de Godot `UndoRedo`. ¡Si la IA se equivoca, simplemente haz clic en el **Editor de Godot** y pulsa `Ctrl + Z`!
+
+> [!IMPORTANT]
+> **📦 El Control de Versiones es el Rey:** Haz commit de tu proyecto de Godot en Git siempre **antes** de pedir a la IA un refactorizado arquitectónico masivo. `git add . && git commit -m "pre-ai-work"`.
+
+> [!NOTE]
+> **🤖 Roles de Agentes:** Dirígete a la IA específicamente para activar comportamientos de especialista. Por ejemplo: *"Lee tu perfil de Technical Artist y arregla los anclajes de mi UI"*.
+
+> [!INFO]
+> **⚡ Sin dependencias NPM:** El bridge de Node.js no utiliza dependencias externas. No requiere ninguna instalación molesta de `npm install`.
 
 ---
 

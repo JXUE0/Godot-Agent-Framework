@@ -21,10 +21,18 @@ If you are a human setting this up for the first time:
 ---
 
 ## 💡 Pro Tips for AI Pair-Programming
-- **Undo is your friend:** All AI scene changes support `Ctrl+Z`. Don't be afraid to let the AI experiment!
-- **Commit often:** Always `git commit` before asking for a "Refactor".
-- **Talk to the Specialists:** Use phrases like *"Hey Lead Engineer, optimize this script"* or *"Technical Artist, fix the UI anchors"*. They will follow their specific protocols.
-- **Zero NPM:** No need for `npm install`. The bridge runs on 100% native Node.js.
+
+> [!TIP]
+> **⌘ The `Undo` Safety Net:** All AI actions that modify the SceneTree are wrapped in native Godot `UndoRedo` operations. If the AI messes up, just click on the **Godot Editor** and press `Ctrl + Z`!
+
+> [!IMPORTANT]
+> **📦 Version Control is King:** Always commit your Godot project to Git **before** asking the AI for a massive architectural refactoring. `git add . && git commit -m "pre-ai-work"`.
+
+> [!NOTE]
+> **🤖 Agents Roles:** Address the AI specifically to trigger specialist behaviors. For example: *"Read your Technical Artist agent profile and fix my UI anchors"*.
+
+> [!INFO]
+> **⚡ Zero NPM Bloat:** The Node.js bridge uses zero external dependencies. No annoying `npm install` required.
 
 ---
 
