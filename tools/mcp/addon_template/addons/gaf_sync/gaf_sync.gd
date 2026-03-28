@@ -12,7 +12,7 @@ func _enter_tree() -> void:
     Engine.set_meta("GAF_SYNC_PLUGIN", self)
     
     # Initialize the Sync Server Node
-    server_node = preload("res://addons/gaf_sync/gaf_server.gd").new()
+    server_node = preload("gaf_server.gd").new()
     add_child(server_node)
     
     print("GAF-Sync Engine: Initialized on port 1342. 📡🕹️⚡")

@@ -16,7 +16,7 @@ var _buffer := ""
 func _enter_tree() -> void:
     # Initialize GAF Handler
     var plugin = Engine.get_meta("GAF_SYNC_PLUGIN") if Engine.has_meta("GAF_SYNC_PLUGIN") else null
-    handler = preload("res://addons/gaf_sync/gaf_handler.gd").new(plugin)
+    handler = preload("gaf_handler.gd").new(plugin)
     add_child(handler)
     _try_connect()
 
