@@ -98,5 +98,5 @@ GAF fully supports passive **Resources** and **Prompts** to automatically feed c
 
 ---
 
-### Licensing & Third-Party Code
-GAF is built for high-level engineering environments. It is a derivative work conceptually evolved from Solomon Elias's **godot-mcp**. Full legal and third-party details are documented in `THIRD_PARTY_NOTICES.md`.
+### 📜 Licensing
+Godot Agent Framework (GAF) is a 100% original, open-source tool built from the ground up to bring professional AI pair-programming to the Godot ecosystem. Feel free to use it, modify it, and level up your game development.
