@@ -1,4 +1,4 @@
-# 🤖 Godot Agent Framework (GAF) - V1.5.0
+# 🤖 Godot Agent Framework (GAF)
 
 ![Godot Engine](https://img.shields.io/badge/Godot-4.3+-blue?logo=godot-engine&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-Native_Bridge-green?logo=node.js)
@@ -8,7 +8,25 @@
 
 ---
 
-The **Godot Agent Framework (GAF)** is a high-performance, secure, and fully-featured ecosystem designed to empower AI Agents in autonomous game development. It establishes a robust bi-directional communication channel between AI models and the Godot Editor API.
+The **Godot Agent Framework (GAF)** is a high-performance, secure, and fully-featured ecosystem designed to empower AI Agents in autonomous game development. It establishes a robust bi-directional communication channel between AI models and the Godot Editor API via the **Model Context Protocol (MCP)**.
+
+## 🏁 Quick Start & Tips
+
+If you are a human setting this up for the first time:
+1. **Clone this repo** inside your Godot project folder.
+2. **Run the installer:** Execute `scripts/setup_project.ps1` (PowerShell) to inject the addon.
+3. **Enable the Plugin:** Open Godot, go to `Project Settings > Plugins` and enable `gaf_sync`.
+4. **Configure your AI:** Follow the [MCP Setup](#-mcp-installation--config) below.
+
+---
+
+## 💡 Pro Tips for AI Pair-Programming
+- **Undo is your friend:** All AI scene changes support `Ctrl+Z`. Don't be afraid to let the AI experiment!
+- **Commit often:** Always `git commit` before asking for a "Refactor".
+- **Talk to the Specialists:** Use phrases like *"Hey Lead Engineer, optimize this script"* or *"Technical Artist, fix the UI anchors"*. They will follow their specific protocols.
+- **Zero NPM:** No need for `npm install`. The bridge runs on 100% native Node.js.
+
+---
 
 ## 📡 MCP Installation & Config
 

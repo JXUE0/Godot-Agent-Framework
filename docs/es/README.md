@@ -1,29 +1,47 @@
-# 🤖 Godot Agent Framework (GAF) - V1.5.0 (ES)
+# 🤖 Godot Agent Framework (GAF) - (ES)
 
 ![Godot Engine](https://img.shields.io/badge/Godot-4.3+-blue?logo=godot-engine&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-Native_Bridge-green?logo=node.js)
 ![MCP](https://img.shields.io/badge/Protocol-MCP_JSON--RPC-orange)
 
-[English](README.md)
+[English](../../README.md)
 
 ---
 
-El **Godot Agent Framework (GAF)** es un ecosistema de alto rendimiento, seguro y completo diseñado para potenciar Agentes de IA en el desarrollo autónomo de videojuegos. Establece un canal de comunicación robusto y bidireccional entre los modelos de IA y la API del Editor de Godot.
+El **Godot Agent Framework (GAF)** es un ecosistema de alto rendimiento, seguro y completo diseñado para potenciar Agentes de IA en el desarrollo autónomo de videojuegos. Establece un canal de comunicación robusto y bidireccional entre los modelos de IA y la API del Editor de Godot mediante el **Model Context Protocol (MCP)**.
+
+## 🏁 Inicio Rápido y Consejos
+
+Si eres un humano configurando esto por primera vez:
+1. **Clona este repositorio** dentro de la carpeta de tu proyecto de Godot.
+2. **Ejecuta el instalador:** Ejecuta `scripts/setup_project.ps1` (PowerShell) para inyectar el addon.
+3. **Activa el Plugin:** Abre Godot, ve a `Project Settings > Plugins` y activa `gaf_sync`.
+4. **Configura tu IA:** Sigue la [Configuración del MCP](#-instalación-y-configuración-del-mcp) más abajo.
+
+---
+
+## 💡 Consejos Pro para Programación con IA
+- **El Deshacer es tu amigo:** Todos los cambios de escena de la IA soportan `Ctrl+Z`. ¡No tengas miedo de dejar que la IA experimente!
+- **Haz commit seguido:** Siempre haz `git commit` antes de pedir un "Refactorizado" masivo.
+- **Habla con los Especialistas:** Usa frases como *"Lead Engineer, optimiza este script"* o *"Technical Artist, arregla los anclajes de la UI"*. Seguirán sus protocolos específicos.
+- **Cero NPM:** No necesitas `npm install`. El bridge funciona con Node.js 100% nativo.
+
+---
 
 ## 📡 Instalación y Configuración del MCP
 
-Para que la IA use estas herramientas, debes registrar el **GAF-Sync Bridge** en tu IDE de IA accesible.
+Para que la IA use estas herramientas, debes registrar el **GAF-Sync Bridge** en tu IDE de IA.
 
-### 1. Cursor IDE
+### 1. Cursor IDE (Estándar)
 - Ve a `Settings > Cursor Settings > MCP`.
 - Añade un nuevo servidor MCP:
   - **Nombre:** `gaf-sync`
   - **Tipo:** `command`
   - **Comando:** `node "[Ruta_Absoluta_Al_GAF]\tools\mcp\gaf_bridge.js"`
 
-### 2. Cline / Roo-Code (VSCode)
-- Haz clic en el icono de **Consola MCP** (las barras junto al prompt).
-- Edita tu `mcp_settings.json`:
+### 2. Cline / Roo-Code / Continue (VSCode)
+- Haz clic en el icono de **Consola MCP** (o Settings > MCP en Continue).
+- Edita tu `mcp_settings.json` o equivalente:
 ```json
 {
   "mcpServers": {
@@ -34,6 +52,23 @@ Para que la IA use estas herramientas, debes registrar el **GAF-Sync Bridge** en
   }
 }
 ```
+
+### 3. Windsurf (Codeium)
+- Abre el archivo `mcp_config.json` de Windsurf.
+- Añade la configuración de `gaf-sync` usando el mismo formato JSON anterior.
+
+### 4. Claude Desktop
+- Abre `%APPDATA%\Claude\claude_desktop_config.json`.
+- Añade la entrada `gaf-sync` bajo `mcpServers`.
+
+---
+
+## 🚀 Entornos de IA Soportados
+El **GAF** se basa en el estándar universal de **MCP**, lo que lo hace compatible con las herramientas de programación de IA más avanzadas:
+- **Cursor:** El IDE nativo de IA líder del mercado.
+- **VSCode (Cline / Roo-Code / Continue):** Las extensiones de agentes más populares.
+- **Windsurf:** El nuevo IDE basado en "Flujos" de Codeium.
+- **Claude Desktop:** La aplicación oficial de Anthropic.
 
 ---
 
