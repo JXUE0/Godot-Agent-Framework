@@ -99,4 +99,6 @@ GAF fully supports passive **Resources** and **Prompts** to automatically feed c
 ---
 
 ### 📜 Licensing
-Godot Agent Framework (GAF) is a 100% original, open-source tool built from the ground up to bring professional AI pair-programming to the Godot ecosystem. Feel free to use it, modify it, and level up your game development.
+Godot Agent Framework (GAF) is released under the **MIT License**.
+
+This is a 100% original, open-source tool built from the ground up to bring professional AI pair-programming to the Godot ecosystem. You are free to use it, modify it, and distribute it in your own projects, provided you include the original copyright notice as detailed in the `LICENSE` file.
