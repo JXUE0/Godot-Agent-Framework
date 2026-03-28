@@ -150,14 +150,25 @@ func _execute_editor_script(params: Dictionary) -> Dictionary:
         return {"status": "error", "message": "No code provided for execution."}
         
     var script = GDScript.new()
-    script.source_code = "@tool\nextends Node\nfunc execute(editor):\n" + code
-    script.reload()
+    # Ephemeral tool script with return capability
+    script.source_code = "@tool\nextends Node\nfunc execute(editor: EditorPlugin) -> Variant:\n"
+    for line in code.split("\n"):
+        script.source_code += "    " + line + "\n"
+    script.source_code += "    return null" # Fallback
     
+    var err = script.reload()
+    if err != OK:
+        return {"status": "error", "message": "GDScript Compile Error (Code " + str(err) + ")"}
+        
     var obj = script.new()
-    obj.execute(plugin)
+    var result = obj.execute(plugin)
     obj.free()
     
-    return {"status": "success", "message": "Editor script executed successfully."}
+    return {
+        "status": "success", 
+        "message": "Editor script executed.",
+        "result": str(result) if result != null else "OK"
+    }
 
 func _delete_node(params: Dictionary) -> Dictionary:
     var node_path = params.get("path", "")
@@ -398,10 +409,10 @@ func _recursive_search_files(path: String, ext: String, query: String, results: 
             if dir.current_is_dir() and not file_name.begins_with("."):
                 _recursive_search_files(path + file_name + "/", ext, query, results, depth + 1, max_results)
             elif not dir.current_is_dir() and not file_name.begins_with("."):
-                var match = true
-                if ext != "" and not file_name.ends_with(ext): match = false
-                if query != "" and query.to_lower() not in file_name.to_lower(): match = false
-                if match:
+                var is_match := true
+                if ext != "" and not file_name.ends_with(ext): is_match = false
+                if query != "" and query.to_lower() not in file_name.to_lower(): is_match = false
+                if is_match:
                     results.append(path + file_name)
                     
             file_name = dir.get_next()

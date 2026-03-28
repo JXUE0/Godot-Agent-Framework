@@ -8,23 +8,33 @@ The **Godot Agent Framework (GAF)** is a high-performance, secure, and fully-fea
 
 ---
 
-## 🚀 How to Start (For Humans)
+## 📡 MCP Installation & Config (Power User)
 
-Welcome to the future of game development. If you want your AI assistant to start coding and building scenes for you, follow these simple steps:
+To enable the AI to use these tools, you must register the **GAF-Sync Bridge** in your AI IDE settings.
 
-1. **Clone this repository** into your workspace:
-   ```bash
-   git clone https://github.com/JXUE0/Godot-Agent-Framework.git
-   ```
+### 1. Cursor IDE
+- Go to `Settings > Cursor Settings > MCP`.
+- Add a new MCP Server:
+  - **Name:** `gaf-sync`
+  - **Type:** `command`
+  - **Command:** `node "[Ruta_Absoluta_Al_GAF]\tools\mcp\gaf_bridge.js"`
 
-2. **Open a chat with your AI Assistant** (in Cursor, Cline, or Antigravity) inside your Godot project workspace.
-   
-3. **Tell the AI:** *"Start GAF"* or *"Ejecuta GAF"*.
-   > **Magic Step:** Our built-in `.clinerules` and `.cursorrules` will force the AI to automatically detect if the framework is missing in your game. It will proactively offer to install it using the `setup_project.ps1` script and launch the Node.js bridge for you!
+### 2. Cline / Roo-Code (VSCode)
+- Click on the **MCP Console** icon (the bars icon next to the prompt).
+- Edit your `mcp_settings.json`:
+```json
+{
+  "mcpServers": {
+    "gaf-sync": {
+      "command": "node",
+      "args": ["[Ruta_Absoluta_Al_GAF]\\tools\\mcp\\gaf_bridge.js"]
+    }
+  }
+}
+```
 
-4. **Enable the Plugin:** Open your Godot 4.3+ project, go to `Project > Project Settings > Plugins`, and check the enable box for **"GAF-Sync Engine"**.
-
-5. **Start Creating!** Tell the AI: *"Create a Player scene with a CharacterBody2D and a Sprite"* or *"Build me a farming system grid"* and watch the Editor update in real-time.
+### 3. VSCode (GAF-Sync Extension - Manual)
+If using the standard VSCode MCP client, add the same node command to your global MCP config path.
 
 ---
 

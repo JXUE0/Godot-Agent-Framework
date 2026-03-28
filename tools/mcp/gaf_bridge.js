@@ -16,8 +16,8 @@ let nextId = 1;
 const pendingRequests = new Map();
 
 // --- MCP Server Setup ---
-const SERVER_NAME = "gaf-sync-bridge";
-const SERVER_VERSION = "1.4.0";
+const SERVER_NAME = "gaf-sync";
+const SERVER_VERSION = "1.5.0";
 
 // Define the tools available in Godot
 const GAF_TOOLS = [
