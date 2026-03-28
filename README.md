@@ -37,16 +37,26 @@ To enable the AI to use these tools, you must register the **GAF-Sync Bridge** i
 
 ---
 
+## 🧠 AI Agent Specialists
+The GAF ecosystem is built around four specialized personas (found in `agents/`). Each has direct access to the Tool Arsenal but follows different architectural protocols:
+
+- **🎩 Producer:** The project orchestrator. Analyzes intent, manages the roadmap, and delegates to specialists.
+- **💻 Lead Engineer:** The architect. Responsible for GDScript implementation, state management, and node tree wiring.
+- **🎨 Technical Artist:** The visual expert. Handles UI Anchors, Shaders, Animations, and Level Design.
+- **🔬 QA Engineer:** The auditor. Tests stability, stress-tests mechanics with the execution tool, and audits typing standards.
+
+---
+
 ## 📂 Framework Structure
 ```text
 Your-Godot-Game-Project/
 ├── addons/
-│   └── gaf_sync/           # 🔌 The Godot Addon
+│   └── gaf_sync/           # 🔌 The Godot Addon: Native Sync Engine.
 ├── Godot-Agent-Framework/  # 📦 The Framework Monorepo:
-│   ├── agents/             # 🧠 AI Specialist Personas
-│   ├── docs/               # 📜 Rules & Guides
-│   ├── scripts/            # ⚙️ Installers (setup_project.ps1)
-│   └── tools/mcp/          # Bridge (gaf_bridge.js)
+│   ├── agents/             # 🧠 Specialist AI profiles.
+│   ├── docs/               # 📜 GAF Best Practices & AI Manuals.
+│   ├── scripts/            # ⚙️ Installers (setup_project.ps1).
+│   └── tools/mcp/          # 🌉 Pure TCP Bridge (gaf_bridge.js).
 ```
 
 ## 🛠️ Tool Arsenal (19+ Native Tools)

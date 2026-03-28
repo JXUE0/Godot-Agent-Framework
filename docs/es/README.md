@@ -37,16 +37,26 @@ Para que la IA use estas herramientas, debes registrar el **GAF-Sync Bridge** en
 
 ---
 
+## 🧠 Especialistas de IA
+El ecosistema GAF se basa en cuatro perfiles especializados (en `agents/`). Todos tienen acceso al arsenal de herramientas, pero con enfoques distintos:
+
+- **🎩 Producer:** El orquestador. Analiza la intención del usuario, gestiona el roadmap y delega en especialistas.
+- **💻 Lead Engineer:** El arquitecto. Responsable de GDScript, la estructura de la escena y la lógica central.
+- **🎨 Technical Artist:** El experto visual. Maneja anclajes de UI, Shaders, Animación y Diseño de Niveles.
+- **🔬 QA Engineer:** El auditor. Prueba la estabilidad, audita el tipado y usa herramientas de ejecución para estresar mecánicas.
+
+---
+
 ## 📂 Estructura del Framework
 ```text
 Tu-Proyecto-Godot/
 ├── addons/
-│   └── gaf_sync/           # 🔌 Addon de Godot
+│   └── gaf_sync/           # 🔌 Addon de Godot: Motor de Sincronización.
 ├── Godot-Agent-Framework/  # 📦 Repositorio Monorepo:
-│   ├── agents/             # 🧠 Personajes Especialistas de IA
-│   ├── docs/               # 📜 Reglas y Guías
-│   ├── scripts/            # ⚙️ Instaladores (setup_project.ps1)
-│   └── tools/mcp/          # Bridge (gaf_bridge.js)
+│   ├── agents/             # 🧠 Perfiles de Agentes especializados.
+│   ├── docs/               # 📜 Guías y Manuales de Buenas Prácticas GAF.
+│   ├── scripts/            # ⚙️ Instaladores (setup_project.ps1).
+│   └── tools/mcp/          # Bridge (gaf_bridge.js).
 ```
 
 ## 🛠️ Arsenal de Herramientas (19+ Nativas)
