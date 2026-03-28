@@ -318,19 +318,25 @@ const server = net.createServer((socket) => {
     console.error('GAF-Sync Bridge: Godot Editor connected successfully (TCP).');
     godotClient = socket;
 
+    let godotBuffer = '';
     socket.on('data', (data) => {
-        try {
-            const messages = data.toString().split('\n').filter(m => m.trim());
-            for (const msgText of messages) {
+        godotBuffer += data.toString();
+        let scanIndex;
+        while ((scanIndex = godotBuffer.indexOf('\n')) !== -1) {
+            const msgText = godotBuffer.slice(0, scanIndex).trim();
+            godotBuffer = godotBuffer.slice(scanIndex + 1);
+            if (!msgText) continue;
+            
+            try {
                 const message = JSON.parse(msgText);
-                if (message.id && pendingRequests.has(message.id)) {
+                if (message.id !== undefined && pendingRequests.has(message.id)) {
                     const { resolve } = pendingRequests.get(message.id);
                     pendingRequests.delete(message.id);
                     resolve(message);
                 }
+            } catch (e) {
+                console.error('GAF-Sync Bridge: Error parsing JSON data from Godot Editor:', e.message);
             }
-        } catch (e) {
-            console.error('GAF-Sync Bridge: Error parsing JSON data from Godot Editor:', e.message);
         }
     });
 

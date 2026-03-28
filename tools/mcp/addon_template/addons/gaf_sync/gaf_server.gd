@@ -11,6 +11,7 @@ var handler: Node = null
 var reconnect_timer := 0.0
 const RECONNECT_INTERVAL := 3.0
 var _connected := false
+var _buffer := ""
 
 func _enter_tree() -> void:
     # Initialize GAF Handler
@@ -38,8 +39,13 @@ func _process(delta: float) -> void:
             
             while tcp_client.get_available_bytes() > 0:
                 var packet = tcp_client.get_utf8_string(tcp_client.get_available_bytes())
-                # Handle multiple JSON messages in the same buffer (split by \n)
-                var messages = packet.split("\n")
+                _buffer += packet
+                
+            if _buffer.contains("\n"):
+                var messages = _buffer.split("\n")
+                _buffer = messages[messages.size() - 1]
+                messages.remove_at(messages.size() - 1)
+                
                 for msgText in messages:
                     if not msgText.strip_edges().is_empty():
                         _handle_message(msgText)
@@ -66,7 +72,7 @@ func _handle_message(message_text: String) -> void:
         var params = data.get("params", {})
         
         # Dispatch to GAF Handler
-        var result = await handler.process_request(method, params)
+        var result = handler.process_request(method, params)
         _send_response(req_id, result)
     else:
         printerr("GAF-Sync Engine (TCP): JSON parse error.")
