@@ -28,19 +28,24 @@ Welcome to the future of game development. If you want your AI assistant to star
 
 ---
 
-## 📂 Framework Structure
+## 📂 Framework Structure (Inside your Godot Project)
 
-Your GAF repository is organized for modularity and strict AI adherence:
+Once cloned inside your Godot project (or placed alongside it) and installed successfully via the setup script, your directory structure should look exactly like a standard Godot repository but Supercharged with AI components:
 
 ```text
-Godot-Agent-Framework/
-├── agents/                 # 🧠 The "Brains": Specialized AI personas (Producer, QA, Tech Artist, Lead Dev).
-├── docs/                   # 📜 Rules of the Engine: The MCP best practices manual.
-├── scripts/                # ⚙️ Deployment: Automated scripts (setup_project.ps1) to inject GAF into any project.
-├── tools/mcp/              # 🔌 The Bridge: The Node.js native server (gaf_bridge.js) and the Godot Addon (gaf_sync).
-├── .clinerules             # 🛡️ AI Warden: Global rules that force Cline/Roo to use the framework properly.
-├── .cursorrules            # 🛡️ AI Warden: Global rules for Cursor IDE.
-└── README.md               # 📖 You are here!
+Your-Godot-Game-Project/
+├── addons/
+│   └── gaf_sync/           # 🔌 The Godot Addon: Injected dynamically by the setup script (Do NOT edit manually).
+├── Godot-Agent-Framework/  # 📦 The Framework Monorepo (You clone this here):
+│   ├── agents/             # 🧠 The "Brains": Specialized AI personas (Producer, QA, Tech Artist, Lead Dev).
+│   ├── docs/               # 📜 Rules of the Engine: The MCP best practices manual.
+│   ├── scripts/            # ⚙️ Deployment: Auto-installers like `setup_project.ps1`.
+│   ├── tools/mcp/          # 🌉 The Bridge: The Node.js native TCP server (`gaf_bridge.js`).
+│   ├── .clinerules         # 🛡️ AI Warden: Core rules that force Cline/Roo to use the framework properly.
+│   └── .cursorrules        # 🛡️ AI Warden: Rules tailored for Cursor IDE.
+├── .godot/                 # Godot Cache (Ignored).
+├── project.godot           # Your Godot Engine configuration.
+└── [Your Godot Scenes & Scripts...]
 ```
 
 ---
