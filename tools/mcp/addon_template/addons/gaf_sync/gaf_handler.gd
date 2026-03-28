@@ -58,7 +58,7 @@ func process_request(method: String, params: Dictionary) -> Dictionary:
 # --- SMART TYPE PARSING PARA MUTACIÓN DE PROPIEDADES ---
 func _smart_type_parse(raw_value: Variant) -> Variant:
     if typeof(raw_value) == TYPE_STRING:
-        var text = raw_value.strip_edges()
+        var text: String = raw_value.strip_edges()
         if text.begins_with("Vector2(") and text.ends_with(")"):
             var parts = text.substr(8, text.length() - 9).split(",")
             if parts.size() == 2: return Vector2(float(parts[0]), float(parts[1]))
@@ -70,6 +70,17 @@ func _smart_type_parse(raw_value: Variant) -> Variant:
             if parts.size() >= 3: 
                 var a = float(parts[3]) if parts.size() == 4 else 1.0
                 return Color(float(parts[0]), float(parts[1]), float(parts[2]), a)
+        elif text.begins_with("Rect2(") and text.ends_with(")"):
+            var parts = text.substr(6, text.length() - 7).split(",")
+            if parts.size() == 4: return Rect2(float(parts[0]), float(parts[1]), float(parts[2]), float(parts[3]))
+        elif text.begins_with("Quaternion(") and text.ends_with(")"):
+            var parts = text.substr(11, text.length() - 12).split(",")
+            if parts.size() == 4: return Quaternion(float(parts[0]), float(parts[1]), float(parts[2]), float(parts[3]))
+        # Dictionary/Array via JSON shorthand check
+        if (text.begins_with("[") and text.ends_with("]")) or (text.begins_with("{") and text.ends_with("}")):
+            var json = JSON.new()
+            if json.parse(text) == OK:
+                return json.data
     return raw_value
 
 # --- TOOL IMPLEMENTATIONS ---
