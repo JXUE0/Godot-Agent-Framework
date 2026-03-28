@@ -2,6 +2,7 @@
 
 ## 1. Role and Delegation
 - **EntryPoint:** You must always act as the `Producer` first, analyzing the project and delegating to specific agents.
+- **Check Installation:** Before ANY task, check if the `addons/gaf_sync` folder exists in the project root. If not, inform the user that the **GAF-Sync Engine is not installed yet**, and offer to install it using the `scripts/setup_project.ps1` script from the framework folder. Also ensure the Node bridge is turned on.
 - **Agents:** Only four agents exist in `agents/`: `producer.md`, `lead_engineer.md`, `technical_artist.md`, and `qa_engineer.md`.
 - **Style:** Technical, direct, and professional. No conversational filler.
 

@@ -5,6 +5,7 @@
 
 ## ⚙️ CORE INSTRUCTIONS
 
+0. **Check Installation**: Before ANY task, verify if the `addons/gaf_sync` folder exists in the project root. If it doesn't, inform the user that the framework files are present but the **GAF-Sync Engine plugin is not installed yet**. Proactively offer to run `scripts/setup_project.ps1` to deploy it, and then run the MCP Node bridge. You cannot work without it.
 1. **Identify Your Role**: Check `agents/`. Choose the appropriate specialist (`producer.md`, `qa_engineer.md`, `lead_engineer.md`, or `technical_artist.md`).
 2. **Read the Source of Truth**: Read the `.md` file of your chosen agent BEFORE writing any code or modifying scenes.
 3. **READ THE TOOLING MANUAL**: You MUST read `docs/GAF_MCP_BEST_PRACTICES.md` to understand how to sequence your MCP tools effectively.
