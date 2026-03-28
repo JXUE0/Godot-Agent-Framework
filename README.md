@@ -1,18 +1,60 @@
-# Godot Agent Framework (GAF) - V1.5.0
+# 🤖 Godot Agent Framework (GAF) - V1.5.0
 
-The **Godot Agent Framework (GAF)** is a high-performance, secure, and fully-featured ecosystem designed to empower AI Agents in autonomous game development. It establishes a robust bi-directional communication channel between AI models and the Godot Editor API, enabling real-time scene manipulation, script editing, and deep project lifecycle management using the official **Model Context Protocol (MCP)**.
+![Godot Engine](https://img.shields.io/badge/Godot-4.3+-blue?logo=godot-engine&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Native_Bridge-green?logo=node.js)
+![MCP](https://img.shields.io/badge/Protocol-MCP_JSON--RPC-orange)
 
-## 🌟 Key Features (V1.5.0 Architecture)
+The **Godot Agent Framework (GAF)** is a high-performance, secure, and fully-featured ecosystem designed to empower AI Agents (like Claude, Gemini, GPT-4) in autonomous game development. It establishes a robust bi-directional communication channel between AI models and the Godot Editor API, enabling real-time scene manipulation, script editing, and deep project lifecycle management using the official **Model Context Protocol (MCP)**.
 
-Following industry standards, GAF implements an advanced `MCPProtocolRouter` pattern, providing the ultimate pair-programming experience in Godot 4.3+:
+---
 
-- **19+ Native Editor Tools:** Full control over Godot's SceneTree, FileSystem, and Inspector via AI.
-- **EditorUndoRedoManager Support:** Destructive actions (like modifying or deleting nodes) are wrapped in native Godot Undo/Redo actions. You can always press `Ctrl + Z` if the AI makes a mistake!
-- **Smart Type Parsing:** The AI can send strings like `"Vector3(1, 2, 0)"` or `"Color(1, 0, 0)"`, and GAF will intelligently cast them into actual Godot mathematical objects to prevent crashes.
-- **Zero-Dependency TCP Bridge:** A pure Node.js gateway ensuring lightning-fast local execution on port `1342` without the need for external `npm` packages.
-- **Continuous Safety:** Deep safety checks against infinite loops when scanning the filesystem, bypassing hidden directories (like `.godot/`) to prevent editor freezing.
+## 🚀 How to Start (For Humans)
 
-## 🛠️ Tool Arsenal
+Welcome to the future of game development. If you want your AI assistant to start coding and building scenes for you, follow these simple steps:
+
+1. **Clone this repository** into your workspace:
+   ```bash
+   git clone https://github.com/JXUE0/Godot-Agent-Framework.git
+   ```
+
+2. **Open a chat with your AI Assistant** (in Cursor, Cline, or Antigravity) inside your Godot project workspace.
+   
+3. **Tell the AI:** *"Start GAF"* or *"Ejecuta GAF"*.
+   > **Magic Step:** Our built-in `.clinerules` and `.cursorrules` will force the AI to automatically detect if the framework is missing in your game. It will proactively offer to install it using the `setup_project.ps1` script and launch the Node.js bridge for you!
+
+4. **Enable the Plugin:** Open your Godot 4.3+ project, go to `Project > Project Settings > Plugins`, and check the enable box for **"GAF-Sync Engine"**.
+
+5. **Start Creating!** Tell the AI: *"Create a Player scene with a CharacterBody2D and a Sprite"* or *"Build me a farming system grid"* and watch the Editor update in real-time.
+
+---
+
+## 📂 Framework Structure
+
+Your GAF repository is organized for modularity and strict AI adherence:
+
+```text
+Godot-Agent-Framework/
+├── agents/                 # 🧠 The "Brains": Specialized AI personas (Producer, QA, Tech Artist, Lead Dev).
+├── docs/                   # 📜 Rules of the Engine: The MCP best practices manual.
+├── scripts/                # ⚙️ Deployment: Automated scripts (setup_project.ps1) to inject GAF into any project.
+├── tools/mcp/              # 🔌 The Bridge: The Node.js native server (gaf_bridge.js) and the Godot Addon (gaf_sync).
+├── .clinerules             # 🛡️ AI Warden: Global rules that force Cline/Roo to use the framework properly.
+├── .cursorrules            # 🛡️ AI Warden: Global rules for Cursor IDE.
+└── README.md               # 📖 You are here!
+```
+
+---
+
+## 💡 Pro Tips for GitHub & Workflow
+
+- **The `Undo` safety net:** All AI actions that modify the SceneTree are wrapped in native Godot `UndoRedo` operations. If the AI messes up a node hierarchy, just click on the Godot Editor and press `Ctrl + Z`!
+- **Version Control is King:** Always commit your Godot project to Git **before** asking the AI to do a massive architectural refactoring. `git add . && git commit -m "pre-ai-work"`.
+- **Agents Roles:** Try talking to the AI specifically. For example: *"Read your Technical Artist agent profile and fix my UI anchors"*. The Framework is built to respect these roles.
+- **No NPM bloat:** The Node.js bridge (`tools/mcp/gaf_bridge.js`) uses zero external dependencies. It's built entirely on native modules. This means no annoying `npm install` requirements.
+
+---
+
+## 🛠️ Tool Arsenal (19+ Native Editor Tools)
 
 The AI Agent has unparalleled access to your Godot runtime through the following tool categories:
 
@@ -26,7 +68,7 @@ The AI Agent has unparalleled access to your Godot runtime through the following
 - `instantiate_scene`: Drops saved `.tscn` prefabs directly into your current level.
 
 ### 3. Editor UX & Selection
-- `get_selected_nodes`: Allows the AI to know exactly what node you are currently clicking on!
+- `get_selected_nodes`: Allows the AI to know exactly what node you are currently clicking on.
 - `set_selected_nodes`: The AI can change your Editor's focus to show you what it just modified.
 
 ### 4. Logic & Metadata
@@ -40,6 +82,8 @@ The AI Agent has unparalleled access to your Godot runtime through the following
 - `execute_editor_script`: Runs arbitrary `@tool` GDScript macros inside the editor thread.
 - `save_scene`, `play_scene`, `stop_scene`: Controls the game's testing lifecycle.
 
+---
+
 ## 📡 Advanced Protocol Primitives (MCP)
 
 GAF fully supports passive **Resources** and **Prompts** to automatically feed context to the AI before tasks begin:
@@ -47,22 +91,7 @@ GAF fully supports passive **Resources** and **Prompts** to automatically feed c
 - **Resources (RAG):** Automatically exposes `godot://project_settings/autoloads` and `godot://input/actions` so the AI understands your Input Map without asking.
 - **Prompts:** Includes built-in workflows like `generate_ai_statemachine` and `analyze_ubershader_performance` to kickstart complex, studio-standard tasks instantly.
 
-## 🚀 Quick Deployment Guide
-
-To deploy GAF in your development environment:
-
-1. **Initialize Project:**
-   ```powershell
-   powershell -File "scripts/setup_project.ps1" -ProjectRoot "C:/YourProject" -InstallMCP
-   ```
-2. **Launch GAF-Bridge:**
-   ```bash
-   node tools/mcp/gaf_bridge.js
-   ```
-3. **Connect Editor:**
-   Open Godot 4.3+, navigate to `Project Settings > Plugins`, and enable **"GAF-Sync Engine"**.
-
 ---
 
-### Licensing
-GAF is built for high-level engineering environments. It is a derivative work evolved from Solomon Elias's **godot-mcp**. Full legal and third-party details are documented in `THIRD_PARTY_NOTICES.md`.
+### Licensing & Third-Party Code
+GAF is built for high-level engineering environments. It is a derivative work conceptually evolved from Solomon Elias's **godot-mcp**. Full legal and third-party details are documented in `THIRD_PARTY_NOTICES.md`.
