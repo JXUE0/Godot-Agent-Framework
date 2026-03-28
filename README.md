@@ -19,7 +19,7 @@ If you are a human setting this up for the first time:
 4. **Configure your AI:** Follow the [MCP Setup](#-mcp-installation--config) below.
 
 > [!TIP]
-> **💬 How to start:** Just say to your AI: *"Use the **gaf-sync** tools to analyze my current Godot scene and project settings"* to begin.
+> **🚀 How to start:** Simply type **"Start GAF"** to your AI. It will immediately activate the specialized agents and synchronize with your Godot Editor to begin development.
 
 ---
 

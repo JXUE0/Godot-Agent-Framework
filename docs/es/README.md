@@ -19,7 +19,7 @@ Si eres un humano configurando esto por primera vez:
 4. **Configura tu IA:** Sigue la [Configuración del MCP](#-instalación-y-configuración-del-mcp) más abajo.
 
 > [!TIP]
-> **💬 Cómo empezar:** Solo dile a tu IA: *"Usa las herramientas de **gaf-sync** para analizar mi escena actual de Godot y la configuración del proyecto"* para comenzar.
+> **🚀 Cómo empezar:** Simplemente escribe **"Start GAF"** en tu IA. Inmediatamente activará los agentes especializados y se sincronizará con tu Editor de Godot para comenzar el desarrollo.
 
 ---
 
