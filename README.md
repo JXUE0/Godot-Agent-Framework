@@ -14,16 +14,16 @@ The **Godot Agent Framework (GAF)** is a high-performance, secure, and fully-fea
 
 To enable the AI to use these tools, you must register the **GAF-Sync Bridge** in your AI IDE settings.
 
-### 1. Cursor IDE
+### 1. Cursor IDE (Standard)
 - Go to `Settings > Cursor Settings > MCP`.
 - Add a new MCP Server:
   - **Name:** `gaf-sync`
   - **Type:** `command`
   - **Command:** `node "[YOUR_GAF_PATH]\tools\mcp\gaf_bridge.js"`
 
-### 2. Cline / Roo-Code (VSCode)
-- Click on the **MCP Console** icon (the bars icon next to the prompt).
-- Edit your `mcp_settings.json`:
+### 2. Cline / Roo-Code / Continue (VSCode)
+- Click on the **MCP Console** icon (or Settings > MCP in Continue).
+- Edit your `mcp_settings.json` or equivalent:
 ```json
 {
   "mcpServers": {
@@ -34,6 +34,23 @@ To enable the AI to use these tools, you must register the **GAF-Sync Bridge** i
   }
 }
 ```
+
+### 3. Windsurf (Codeium)
+- Open Windsurf `mcp_config.json`.
+- Add the `gaf-sync` configuration using the same JSON format as above.
+
+### 4. Claude Desktop
+- Open `%APPDATA%\Claude\claude_desktop_config.json`.
+- Add the `gaf-sync` configuration under `mcpServers`.
+
+---
+
+## 🚀 Supported AI Environments
+The **GAF** is built on the universal **Model Context Protocol (MCP)**, making it compatible with the industry's most advanced AI coding tools:
+- **Cursor:** The leading AI-native IDE.
+- **VSCode (Cline / Roo-Code / Continue):** The most popular open-weight agent extensions.
+- **Windsurf:** The state-of-the-art "Flow" based agent IDE.
+- **Claude Desktop:** The official app from Anthropic.
 
 ---
 
