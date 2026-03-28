@@ -18,6 +18,9 @@ If you are a human setting this up for the first time:
 3. **Enable the Plugin:** Open Godot, go to `Project Settings > Plugins` and enable `gaf_sync`.
 4. **Configure your AI:** Follow the [MCP Setup](#-mcp-installation--config) below.
 
+> [!TIP]
+> **💬 How to start:** Just say to your AI: *"Use the **gaf-sync** tools to analyze my current Godot scene and project settings"* to begin.
+
 ---
 
 ## 💡 Pro Tips for AI Pair-Programming

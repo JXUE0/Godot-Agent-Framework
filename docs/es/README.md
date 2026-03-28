@@ -18,6 +18,9 @@ Si eres un humano configurando esto por primera vez:
 3. **Activa el Plugin:** Abre Godot, ve a `Project Settings > Plugins` y activa `gaf_sync`.
 4. **Configura tu IA:** Sigue la [Configuración del MCP](#-instalación-y-configuración-del-mcp) más abajo.
 
+> [!TIP]
+> **💬 Cómo empezar:** Solo dile a tu IA: *"Usa las herramientas de **gaf-sync** para analizar mi escena actual de Godot y la configuración del proyecto"* para comenzar.
+
 ---
 
 ## 💡 Consejos Pro para Programación con IA
